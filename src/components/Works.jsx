@@ -35,11 +35,17 @@ const Works = ( {restBase, featuredImage} ) => {
                         <div class="w-[500px] my-0 mx-auto">
                             {post.featured_media !== 0 && post._embedded &&
                                 <Link className="text-center" to={`/works/${post.slug}`}>
-                                   {/* <figure> <img
+                                   <figure> <img
                                             src={restData.acf.work_image}
                                             alt="A picture of Kaori"
                                     />
-                                    </figure> */}
+                                    </figure>
+                                    {/* <figure
+                                            className="featured-image"
+                                            dangerouslySetInnerHTML={featuredImage(
+                                                post._embedded['wp:featuredmedia'][0]
+                                            )}
+                                        ></figure> */}
 
                                     <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
                                 </Link>
@@ -56,9 +62,10 @@ const Works = ( {restBase, featuredImage} ) => {
                         )}
                         
                     </article>
+                    
                 )}
-                <div id="contacts">
-                    {/* <Contacts /> */}
+                <div>
+                    <Link to="/about"><p className="text-center">About Me</p></Link>
                 </div>
             </>
         : 

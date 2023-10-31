@@ -39,10 +39,10 @@ const Home = ( {restBase} ) => {
                     <Works restBase={restBase} /> 
                 </section>
             </article>
-                <section id="contacts" className="h-36">
+                {/* <section id="contacts" className="h-36">
                      <h2 className="text-center">Contacts</h2>
                     <Contacts restBase={restBase} />
-                </section>
+                </section> */}
                 </>
         : 
             <Loading /> 

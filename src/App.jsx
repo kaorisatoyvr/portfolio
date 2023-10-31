@@ -40,12 +40,16 @@ function App() {
           <Route path='/about' element={<About restBase={restBase} featuredImage={featuredImage} />} />
           <Route path='/works' element={<Works restBase={restBase} featuredImage={featuredImage} />} />
           <Route path='/works/:slug' element={<Work restBase={restBase} featuredImage={featuredImage} />} />
-          <Route path='/contacts' element={<Contacts restBase={restBase} />} />
+          {/* <Route path='#contacts' element={<Contacts restBase={restBase} />} /> */}
           <Route path='/love' element={<Love restBase={restBase} />} />
           <Route path='/toolkit' element={<Toolkit restBase={restBase} />} />
         </Routes>
       </main>
       <footer>
+          <section id="contacts" className="h-36">
+             <h2 className="text-center">Contacts</h2>
+              <Contacts restBase={restBase} />
+          </section>
         <p className="copyright"><a href="https://kaorisato.ca/" target="_blank" rel="noopener noreferrer">&#169; 2023 Kaori Sato</a>.</p>
       </footer>
     </Router>

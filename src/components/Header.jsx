@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import useMediaQuery from '../hooks/useMediaQuery';
 
 function Header() {
@@ -21,7 +21,7 @@ function Header() {
                             <li><NavLink to='/' end>Home</NavLink></li>
                             <li><NavLink to='/about'>About</NavLink></li>
                             <li><NavLink to='/works'>Works</NavLink></li>
-                            <li><NavLink to='/contacts'>Contacts</NavLink></li>
+                            <li><a href='#contacts'>Contacts</a></li>
                         </ul>
                         </nav>
                     </div>
