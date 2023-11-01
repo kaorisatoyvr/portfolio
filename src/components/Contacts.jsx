@@ -12,6 +12,7 @@ const Contacts = ( {restBase} ) => {
             const response = await fetch(restPath)
             if ( response.ok ) {
                 const data = await response.json()
+                data.content.rendered = data.content.rendered.replace(/<h1>.*?<\/h1>/, '');
                 setData(data)
                 setLoadStatus(true)
             } else {
@@ -31,12 +32,12 @@ const Contacts = ( {restBase} ) => {
                 <h2>{restData.acf.contacts_title}</h2>
                     <div className="flex justify-center">
                     
-                    <a href={`mailto:${restData.acf.email}`}><img className="w-10 m-0.5" src={restData?.acf?.email_image} alt={restData.acf.email} /></a>
+                    <a href={`mailto:${restData.acf.email}`}><img className="w-10 m-5" src={restData?.acf?.email_image} alt={restData.acf.email} /></a>
                     
 
-                    <a href={`${restData.acf.linkedin}`} target="_blank" rel="noopener noreferrer"><img className="w-10" src={restData?.acf?.linkedin_image} alt={restData.acf.linkedin} /></a>
+                    <a href={`${restData.acf.linkedin}`} target="_blank" rel="noopener noreferrer"><img className="w-10 m-5" src={restData?.acf?.linkedin_image} alt={restData.acf.linkedin} /></a>
 
-                    <a href={`${restData.acf.github}`} target="_blank" rel="noopener noreferrer"><img className="w-10" src={restData?.acf?.github_image} alt={restData.acf.github} /></a>
+                    <a href={`${restData.acf.github}`} target="_blank" rel="noopener noreferrer"><img className="w-10 m-5" src={restData?.acf?.github_image} alt={restData.acf.github} /></a>
                     </div>
                 </div>
             </article>

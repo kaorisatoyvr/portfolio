@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loading from './Loading'
 
 const Toolkit = ({ restBase }) => {
     const restPath = restBase + 'pages/16?_embeded&acf_format=standard'
@@ -24,7 +25,10 @@ const Toolkit = ({ restBase }) => {
     <>
         {isLoaded ? (
          <article>
-            <p>{restData.acf.toolkit}</p>
+            <h2>{restData.acf.toolkit_title}</h2>
+                        {restData.acf.toolkit.map((item, index) => (
+                            <p key={index}>{item.toolkit_item}</p>
+                        ))}
         </article>
     ) : (
         <Loading />

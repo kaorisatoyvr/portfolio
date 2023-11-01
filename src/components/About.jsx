@@ -53,43 +53,30 @@ const About = ({ restBase }) => {
             {isLoaded ?
                 <>
                     <article id={`post-${restData.id}`}>
-                        {restPath}
-                        <h1>{restData.title.rendered}</h1>
-                        <p>{restData.acf.about_me_content}</p>
-                        <p>{restData.acf.about_content2}</p>
-                        <p>{restData.acf.about_content3}</p>
-                        <figure>
-                            <img
-                                src={restData?.acf?.picture_of_me}
-                                alt="A picture of Kaori" />
-                        </figure>
+                            <h1>{restData.title.rendered}</h1>
+                        <div className="flex">
+                            <div className="w-3/4 m-10">
+                                <p>{restData.acf.about_me_content}</p>
+                                <p>{restData.acf.about_content2}</p>
+                                <p>{restData.acf.about_content3}</p>
+                            </div>
+                            <div className="w-1/4 m-10">
+                                <figure>
+                                    <img
+                                        src={restData?.acf?.picture_of_me}
+                                        alt="A picture of Kaori" />
+                                </figure>
+                            </div>
+                        </div>
                         <h2>{restData.acf.toolkit_title}</h2>
                         {restData.acf.toolkit.map((item, index) => (
                             <p key={index}>{item.toolkit_item}</p>
                         ))}
-                        {/* <Toolkit /> */}
-                        {/* <Love /> */}
-                        <div className="w-1/2 my-0 mx-auto">
-                            <Swiper
-                                modules={[Navigation, Pagination, Scrollbar, A11y, EffectFlip, Autoplay]}
-                                autoplay={{ delay: 2500 }}
-                                spaceBetween={50}
-                                slidesPerView={1}
-                                navigation
-                                effect="flip"
-                                pagination={{ clickable: true }}
-                                scrollbar={{ draggable: true }}
-                                onSlideChange={() => console.log('slide change')}
-                                onSwiper={(swiper) => console.log(swiper)}
-                            >
-                                {restData.acf.love.map((slides) => (
-                                    <SwiperSlide key={slides.love_text}>
-                                        <img className="w-24 my-0 mx-auto" src={slides.love_image} alt={slides.love_text} />
-                                        <p className="text-center">{slides.love_text}</p>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-                        </div>
+
+                        <Toolkit restBase={restBase} />
+
+                        <Love restBase={restBase} />
+                       
                     </article>
 
                     <div>

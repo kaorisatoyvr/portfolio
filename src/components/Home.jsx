@@ -4,7 +4,7 @@ import Works from './Works'
 import Contacts from './Contacts'
 
 const Home = ( {restBase} ) => {
-    const restPath = restBase + 'pages/7'
+    const restPath = restBase + 'pages/7?_embed&acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
@@ -33,16 +33,13 @@ const Home = ( {restBase} ) => {
                     <p className="text-center" >{restData.acf.sub_title}</p>
                     <a id="scroll-btn" href="#works"></a>
                 </section>
-                
+                {restPath}
                 <section id="works" className="h-[60vh] mt-[5rem] relative">
                     <h2 className="text-center">Works</h2>
-                    <Works restBase={restBase} /> 
+                    <Works /> 
+                    {/* <Works restBase={restBase} />  */}
                 </section>
             </article>
-                {/* <section id="contacts" className="h-36">
-                     <h2 className="text-center">Contacts</h2>
-                    <Contacts restBase={restBase} />
-                </section> */}
                 </>
         : 
             <Loading /> 

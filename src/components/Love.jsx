@@ -8,6 +8,7 @@ import 'swiper/swiper-bundle.css';
 const Love = ({ restBase }) => {
     const restPath = restBase + 'pages/16?_embed&acf_format=standard'
     const [restData, setData] = useState([])
+    const [isLoaded, setLoadStatus] = useState(false)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -36,14 +37,14 @@ const Love = ({ restBase }) => {
                                 navigation
                                 effect="flip"
                                 pagination={{ clickable: true }}
-                                scrollbar={{ draggable: true }}
+                                // scrollbar={{ draggable: true }}
                                 onSlideChange={() => console.log('slide change')}
                                 onSwiper={(swiper) => console.log(swiper)}
                             >
                                 {restData.acf.love.map((slides) => (
                                     <SwiperSlide key={slides.love_text}>
                                         <img className="w-24 my-0 mx-auto" src={slides.love_image} alt={slides.love_text} />
-                                        <p className="text-center">{slides.love_text}</p>
+                                        <p className="text-center my-10">{slides.love_text}</p>
                                     </SwiperSlide>
                                 ))}
                             </Swiper>

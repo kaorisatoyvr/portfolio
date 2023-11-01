@@ -4,8 +4,8 @@ import Contacts from './Contacts'
 import Loading from './Loading'
 
 const Works = ( {restBase, featuredImage} ) => {
-    // const restPath = restBase + 'kaori-work?_embed&order=asc&orderby=title'
-    const restPath = restBase + 'kaori-work?_embeded&acf_format=standard'
+    const restPath = restBase + 'kaori-work?_embed&order=asc&orderby=title'
+    // const restPath = restBase + 'kaori-work?_embeded&acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
@@ -35,19 +35,19 @@ const Works = ( {restBase, featuredImage} ) => {
                         <div class="w-[500px] my-0 mx-auto">
                             {post.featured_media !== 0 && post._embedded &&
                                 <Link className="text-center" to={`/works/${post.slug}`}>
-                                   <figure> <img
+                                   {/* <figure> <img
                                             src={restData.acf.work_image}
                                             alt="A picture of Kaori"
                                     />
-                                    </figure>
-                                    {/* <figure
+                                    </figure> */}
+                                    <figure
                                             className="featured-image"
                                             dangerouslySetInnerHTML={featuredImage(
                                                 post._embedded['wp:featuredmedia'][0]
                                             )}
-                                        ></figure> */}
+                                        ></figure>
 
-                                    <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
+                                    {/* <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure> */}
                                 </Link>
                             }
                         </div>
