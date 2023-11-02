@@ -3,7 +3,7 @@ import Loading from './Loading'
 import Works from './Works'
 import Contacts from './Contacts'
 
-const Home = ( {restBase} ) => {
+const Home = ( {restBase, featuredImage} ) => {
     const restPath = restBase + 'pages/7'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
@@ -32,8 +32,8 @@ const Home = ( {restBase} ) => {
                     <p className="text-center" >{restData.acf.sub_title}</p>
                     <a id="scroll-btn" href="#works"></a>
                 </section>
-                <section id="works" className="h-[170vh] mt-[5rem] relative">
-                    <Works restBase={restBase} /> 
+                <section id="works" className="h-[160vh] mt-[5rem] relative">
+                <Works restBase={restBase} featuredImage={featuredImage}/>
                 </section>
             </article>
                 </>

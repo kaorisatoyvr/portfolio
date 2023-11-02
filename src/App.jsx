@@ -19,6 +19,7 @@ function App() {
     let imgHeight = featuredImageObject.media_details.sizes.full.height;
     let imgURL = featuredImageObject.source_url;
     let img = `<img src="${imgURL}" 
+        class="box1 p-5 w-[500px] my-0 mx-auto"
         width="${imgWidth}"
         height="${imgHeight}"
         alt="${featuredImageObject.alt_text}"
@@ -35,15 +36,15 @@ function App() {
       <div className="z-9999">
         <Header />
       </div>
-      <main id="main" className="w-4/5 m-auto h-full pt-20 z-0">
+      <main id="main" className="w-4/5 m-auto h-full pt-20 top-[70px]">
         <Routes>
-          <Route path='/' element={<Home restBase={restBase} />} />
-          <Route path='/about' element={<About restBase={restBase} featuredImage={featuredImage} />} />
+          <Route path='/' element={<Home restBase={restBase} featuredImage={featuredImage}/>} />
+          <Route path='/about' element={<About restBase={restBase} />} />
           <Route path='/works' element={<Works restBase={restBase} featuredImage={featuredImage} />} />
           <Route path='/works/:slug' element={<Work restBase={restBase} featuredImage={featuredImage} />} />
           <Route path='/love' element={<Love restBase={restBase} />} />
           <Route path='/toolkit' element={<Toolkit restBase={restBase} />} />
-          <Route path='/filterbuttons' element={<FilterButtons restBase={restBase} />} />
+          {/* <Route path='/filterbuttons' element={<FilterButtons restBase={restBase} />} /> */}
           <Route path="*" element={< Error />} />
         </Routes>
       </main>

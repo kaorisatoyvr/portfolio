@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Loading from './Loading'
-import { AnimatePresence, motion } from "framer-motion";
-import FilterButtons from "./FilterButtons";
 
 const Toolkit = ({ restBase }) => {
     const restPath = restBase + 'pages/16?&acf_format=standard'

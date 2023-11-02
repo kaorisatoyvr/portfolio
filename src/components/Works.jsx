@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
 
-const Works = ( { restBase } ) => {
-    const restPath = restBase + 'kaori-work?&acf_format=standard'
+const Works = ( { restBase, featuredImage } ) => {
+    const restPath = restBase + 'kaori-work?&acf_format=standard&_embed'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
@@ -29,26 +29,17 @@ const Works = ( { restBase } ) => {
 
                 {restData.map(post => 
                     <article key={post.id} id={`post-${post.id}`}>
-                        
-                        <div className="w-[500px] my-0 mx-auto">
+                        <div>
                             {post.featured_media !== 0 && 
                                 <Link className="text-center" to={`/works/${post.slug}`}>
                                     
-                                    <figure>
-                                    <img className="bg-white border-1 p-5 rounded-lg shadow-md" src={post._links['wp:featuredmedia'][0].href} alt={post.title.rendered} />
+                                    <figure dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}/>
                     
-                                    </figure>
-
                                 </Link>
                             }
                         </div>
                         <Link to={`/works/${post.slug}`}><h2 className="text-center p-2 my-0 mx-auto text-center border-0 border-brown rounded-xl w-72 btn-yellow">{post.title.rendered}</h2></Link>
 
-                        {/* {post['kaori-work-category'] && (
-                <p className="text-center">
-                  Work Category: {post['kaori-work-category'].map((category) => category).join(', ')}
-                </p>
-              )} */}
                         
                     </article>
                     
@@ -57,13 +48,17 @@ const Works = ( { restBase } ) => {
                 {/* About me button */}
                 <div>
                     <Link to="/about">
-                        <p className="p-2 my-0 mx-auto text-center border-0 border-brown rounded-3xl w-36 btn-yellow">
+                        <p className="btn-yellow {
+">
                         See About Me
                         </p>
                     </Link>
                 </div>
             </>
         : 
+
+        // I can add if condition here (if it is on work page, loading if it is on home page, not loading.)
+
             <Loading />
         }
         </>   

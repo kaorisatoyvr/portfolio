@@ -56,7 +56,7 @@ const About = ({ restBase }) => {
 
                     <div>
                         <Link to="/works">
-                            <p className="p-2 my-0 mx-auto text-center border-0 border-brown rounded-3xl w-48 btn-yellow">See More Works</p>
+                            <p className="btn-yellow">See More Works</p>
                         </Link>
                     </div>
                 </>

@@ -10,7 +10,7 @@ function Header() {
         <header id="masthead" >
             {isDesktop ? (
                     
-                    <div className="site-header h-[70px] fixed top-0 right-0 left-0 bottom-0 flex justify-between items-center bg-[#ffffff] z-9999">
+                    <div className="site-header h-[70px] fixed top-0 right-0 left-0 bottom-0 flex justify-between items-center bg-white z-9999">
                         <div className="site-branding">
                             <a href="/">
                             <p className="site-title font-brightwall text-brown">Kaori Sato</p>

@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {},
     'light-purple': '#FAFAFA',
+    'bg-header': '#fafafab1',
   },
   plugins: [],
 }

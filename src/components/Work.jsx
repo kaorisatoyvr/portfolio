@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
 
-const Work = ( { restBase } ) => {
+const Work = ( { restBase, featuredImage } ) => {
     const { slug } = useParams();
-    const restPath = restBase+ `kaori-work/?slug=${slug}&acf_format=standard`;
+    const restPath = restBase+ `kaori-work/?slug=${slug}&acf_format=standard&_embed`;
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
@@ -31,15 +31,16 @@ const Work = ( { restBase } ) => {
                 <h1>{restData?.title?.rendered}</h1>
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData?.content?.rendered}}></div>
                 
-                <figure>
-                    <img className="max-w-[600px] mx-auto my-0 bg-white border-1 p-5 rounded-lg shadow-md" src={restData.acf.work_image} alt={restData.title.rendered} />
-                </figure>
-                
+                {restData.featured_media !== 0 && 
+                    <Link className="text-center" to={`/works/${slug}`}>
+                        
+                     <figure dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}/>
+        
+                    </Link>
+                }
                     
                 <h2>{restData?.acf?.overview_title}</h2>
                 <p>{restData?.acf?.overview}</p>
-                
-               
                 
                 <h2>{restData?.acf?.tool_i_used_title}</h2>
                 <p>{restData?.acf?.tool_i_used}</p>
@@ -60,15 +61,6 @@ const Work = ( { restBase } ) => {
 
                             
             </article>
-            {/* <nav className="posts-navigation">
-                {restData.previous_post['id'] &&
-                    <Link to={`/works/${restData.previous_post['slug']}`} className="prev-post">Previous: {restData.previous_post['title']}</Link>
-                }
-                {restData.next_post['id'] &&
-                    <Link to={`/works/${restData.next_post['slug']}`} className="next-post">Next: {restData.next_post['title']}</Link>
-                }
-            </nav> */}
-            
 
         </>
         
