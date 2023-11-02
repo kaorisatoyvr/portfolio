@@ -19,7 +19,7 @@ function App() {
     let imgHeight = featuredImageObject.media_details.sizes.full.height;
     let imgURL = featuredImageObject.source_url;
     let img = `<img src="${imgURL}" 
-        class="box1 p-5 w-[500px] my-0 mx-auto"
+        class="p-5 w-[500px] my-0 mx-auto"
         width="${imgWidth}"
         height="${imgHeight}"
         alt="${featuredImageObject.alt_text}"

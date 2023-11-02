@@ -29,7 +29,7 @@ const Works = ( { restBase, featuredImage } ) => {
 
                 {restData.map(post => 
                     <article key={post.id} id={`post-${post.id}`}>
-                        <div>
+                        <div className="box1">
                             {post.featured_media !== 0 && 
                                 <Link className="text-center" to={`/works/${post.slug}`}>
                                     
@@ -37,8 +37,8 @@ const Works = ( { restBase, featuredImage } ) => {
                     
                                 </Link>
                             }
+                        <Link to={`/works/${post.slug}`}><h2 className= "btn-yellow">{post.title.rendered}</h2></Link>
                         </div>
-                        <Link to={`/works/${post.slug}`}><h2 className="text-center p-2 my-0 mx-auto text-center border-0 border-brown rounded-xl w-72 btn-yellow">{post.title.rendered}</h2></Link>
 
                         
                     </article>

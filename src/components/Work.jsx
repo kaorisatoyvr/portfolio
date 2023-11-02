@@ -32,11 +32,13 @@ const Work = ( { restBase, featuredImage } ) => {
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData?.content?.rendered}}></div>
                 
                 {restData.featured_media !== 0 && 
+                    <div className="box2">
                     <Link className="text-center" to={`/works/${slug}`}>
                         
                      <figure dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}/>
         
                     </Link>
+                    </div>
                 }
                     
                 <h2>{restData?.acf?.overview_title}</h2>
