@@ -3,36 +3,11 @@ import Loading from './Loading'
 import { Link } from 'react-router-dom'
 import Love from './Love'
 import Toolkit from './ToolKit'
-import Contacts from './Contacts'
-import { Navigation, Pagination, Scrollbar, A11y, EffectFlip, Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
-
 
 const About = ({ restBase }) => {
     const restPath = restBase + 'pages/16?_embed&acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
-    const [featuredMedia, setFeaturedMedia] = useState(null); // To store featured media data
-
-    // Function to fetch the media item
-    const fetchMediaItem = (mediaId) => {
-        const mediaUrl = `${restBase}media/${mediaId}`;
-        fetch(mediaUrl)
-            .then((response) => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error('Failed to fetch media');
-                }
-            })
-            .then((mediaData) => {
-                setFeaturedMedia(mediaData); // Store the media data in the state
-            })
-            .catch((error) => {
-                console.error('Error fetching media:', error);
-            });
-    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -62,7 +37,7 @@ const About = ({ restBase }) => {
                             </div>
                             <div className="w-1/4 m-10">
                                 <figure>
-                                    <img
+                                    <img className="z-0"
                                         src={restData?.acf?.picture_of_me}
                                         alt="A picture of Kaori" />
                                 </figure>
@@ -81,7 +56,7 @@ const About = ({ restBase }) => {
 
                     <div>
                         <Link to="/works">
-                            <p className="text-center">See More Works</p>
+                            <p className="p-2 my-0 mx-auto text-center border-0 border-brown rounded-3xl w-48 btn-yellow">See More Works</p>
                         </Link>
                     </div>
                 </>

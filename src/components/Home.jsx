@@ -4,7 +4,7 @@ import Works from './Works'
 import Contacts from './Contacts'
 
 const Home = ( {restBase} ) => {
-    const restPath = restBase + 'pages/7?_embed&acf_format=standard'
+    const restPath = restBase + 'pages/7'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
@@ -13,7 +13,6 @@ const Home = ( {restBase} ) => {
             const response = await fetch(restPath)
             if ( response.ok ) {
                 const data = await response.json()
-                console.log('Fetched data:', data);
                 setData(data)
                 setLoadStatus(true)
             } else {
@@ -33,11 +32,8 @@ const Home = ( {restBase} ) => {
                     <p className="text-center" >{restData.acf.sub_title}</p>
                     <a id="scroll-btn" href="#works"></a>
                 </section>
-                {restPath}
-                <section id="works" className="h-[60vh] mt-[5rem] relative">
-                    <h2 className="text-center">Works</h2>
-                    <Works /> 
-                    {/* <Works restBase={restBase} />  */}
+                <section id="works" className="h-[170vh] mt-[5rem] relative">
+                    <Works restBase={restBase} /> 
                 </section>
             </article>
                 </>

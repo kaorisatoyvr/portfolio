@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, BrowserRouter} from 'react-router-dom'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Header from './components/Header';
 import Home from './components/Home'
 import About from './components/About'
@@ -8,6 +8,7 @@ import Toolkit from './components/ToolKit'
 import Works from './components/Works'
 import Work from './components/Work'
 import Contacts from './components/Contacts'
+import Error from './components/Error';
 
 function App() {
   
@@ -31,10 +32,10 @@ function App() {
 
   return (
     <Router basename="/">
-
+      <div className="z-9999">
         <Header />
-
-      <main id="main" className="w-4/5 m-auto h-full">
+      </div>
+      <main id="main" className="w-4/5 m-auto h-full pt-20 z-0">
         <Routes>
           <Route path='/' element={<Home restBase={restBase} />} />
           <Route path='/about' element={<About restBase={restBase} featuredImage={featuredImage} />} />
@@ -42,6 +43,8 @@ function App() {
           <Route path='/works/:slug' element={<Work restBase={restBase} featuredImage={featuredImage} />} />
           <Route path='/love' element={<Love restBase={restBase} />} />
           <Route path='/toolkit' element={<Toolkit restBase={restBase} />} />
+          <Route path='/filterbuttons' element={<FilterButtons restBase={restBase} />} />
+          <Route path="*" element={< Error />} />
         </Routes>
       </main>
       <footer>

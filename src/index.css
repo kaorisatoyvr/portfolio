@@ -1,9 +1,5 @@
+/* fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
-/* Rest of your CSS code */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @font-face {
 	font-family: 'brightwall';
@@ -14,15 +10,22 @@
 .font-brightwall {
 	font-family: 'brightwall', sans-serif;
 	}
+
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Color */
 .text-brown {
 	color: #492C0E;
-}  
-
-.swiper-button-next .swiper-button-previous{
-	z-index: 999;
+}
+.btn-yellow {
+	background-color: #EDE795;
 }
 
-/* scroll button */
+/* scroll button on Home page*/
 a#scroll-btn {
 	position: absolute;
 	height: 30px;
@@ -70,20 +73,9 @@ a#scroll-btn:after {
 	letter-spacing: 1px;
 	font-weight: 100;
 }
-.works {
-	background-color:hsl(197, 100%, 20%);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 1em;
-}
-.home__title {
-	justify-content: center;
-}
 
 svg {
-	color: #492C0E;
+	fill: #492C0E;
 }
 /*--------------------------------------------------------------
 # Normalize
@@ -236,7 +228,7 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	-webkit-appearance: button;
+	/* -webkit-appearance: button; */
 	cursor: pointer;
 }
 
@@ -495,7 +487,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-	color: hsl(197, 100%, 20%);
+	color: #469c3b;
 }
 
 a:focus {
@@ -546,28 +538,6 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
-}
-
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5em;
-}
-
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
 .clear:before,
@@ -601,62 +571,19 @@ a:active {
     display: block;
 	margin: 0 auto;
 }
-
-#root {
-	/* background: #fff; */
-	margin: 1.25rem auto;
-	/* max-width: 960px; */
-}
-
 #main {
-	padding: 1.25rem;
 	margin: 0 auto;
     min-height: 18.75rem;
 }
 
 #main article {
-	position: relative;
 	margin-bottom: 5rem;
-}
-
-#main article::after {
-	content: '';
-	position: absolute;
-	bottom: -3rem;
-	left: 0;
-	right: 0;
-	display: block;
-	width: 12.5rem;
-	height: 1px;
-	margin: 0 auto;
-	background-color: #aaa;
-}
-
-#main .featured-works {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-}
-
-#main .featured-works h2 {
-	grid-column: 1 / 5;
-}
-
-#main .featured-works article {
-	margin-bottom: 0;
-}
-
-#main .featured-works article::after {
-	display: none;
-}
-
-#main .featured-works img {
-	height: auto;
 }
 
 .site-navigation ul {
 	list-style: none;
 	margin: 0;
-	padding: 0 1.25rem 1rem;
+	/* padding: 0 1.25rem 1rem; */
 	text-align: left;
 	display: flex;
 	flex-wrap: wrap;
@@ -670,7 +597,7 @@ a:active {
 }
 
 .site-navigation a.active {
-	color: hsl(158, 75%, 33%);
+	color: #469c3b;
 }
 
 footer {
@@ -685,21 +612,4 @@ footer p {
 .copyright {
 	font-size: .875rem;
 	text-align: center;
-}
-
-.posts-navigation {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
-
-.posts-navigation .next-post {
-	grid-column: 2/3;
-	text-align: right;
-}
-
-.featured-image img {
-	display: block;
-	width: 100%;
-	/* height: 300px; */
-	object-fit: cover;
 }

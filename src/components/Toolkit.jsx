@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Loading from './Loading'
+import { AnimatePresence, motion } from "framer-motion";
+import FilterButtons from "./FilterButtons";
 
 const Toolkit = ({ restBase }) => {
-    const restPath = restBase + 'pages/16?_embeded&acf_format=standard'
+    const restPath = restBase + 'pages/16?&acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
