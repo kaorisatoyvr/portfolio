@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import Loading from './Loading'
 import Works from './Works'
-import Contacts from './Contacts'
 
 const Home = ( {restBase, featuredImage} ) => {
     const restPath = restBase + 'pages/7'
@@ -35,7 +34,7 @@ const Home = ( {restBase, featuredImage} ) => {
                 <div className="m-[10rem]">
 
                 </div>
-                <section id="works" className="h-[160vh] block">
+                <section id="works" className="h-[180vh] block">
                 <Works restBase={restBase} featuredImage={featuredImage}/>
                 </section>
             </article>

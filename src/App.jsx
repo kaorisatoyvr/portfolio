@@ -5,10 +5,14 @@ import Home from './components/Home'
 import About from './components/About'
 import Love from './components/Love'
 import Toolkit from './components/ToolKit'
+import FilterButtons from './components/FilterButtons'
+import WorkList from './components/WorkList'
 import Works from './components/Works'
 import Work from './components/Work'
+import SeeMoreWorks from './components/SeeMoreWorks'
 import Contacts from './components/Contacts'
 import Error from './components/Error';
+
 
 function App() {
   
@@ -40,11 +44,13 @@ function App() {
         <Routes>
           <Route path='/' element={<Home restBase={restBase} featuredImage={featuredImage}/>} />
           <Route path='/about' element={<About restBase={restBase} />} />
+          <Route path='/worklist' element={<WorkList restBase={restBase} featuredImage={featuredImage} />} />
           <Route path='/works' element={<Works restBase={restBase} featuredImage={featuredImage} />} />
           <Route path='/works/:slug' element={<Work restBase={restBase} featuredImage={featuredImage} />} />
+          <Route path='/seemoreworks' element={<SeeMoreWorks restBase={restBase} featuredImage={featuredImage} />} />
           <Route path='/love' element={<Love restBase={restBase} />} />
           <Route path='/toolkit' element={<Toolkit restBase={restBase} />} />
-          {/* <Route path='/filterbuttons' element={<FilterButtons restBase={restBase} />} /> */}
+          <Route path='/filterButtons' element={<FilterButtons restBase={restBase} />} />
           <Route path="*" element={< Error />} />
         </Routes>
       </main>

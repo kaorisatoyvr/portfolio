@@ -3,8 +3,9 @@ import Loading from './Loading'
 import { Link } from 'react-router-dom'
 import Love from './Love'
 import Toolkit from './ToolKit'
+import SeeMoreWorks from './SeeMoreWorks'
 
-const About = ({ restBase }) => {
+const About = ({ restBase, featuredImage, handleClick, active }) => {
     const restPath = restBase + 'pages/16?_embed&acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
@@ -39,7 +40,7 @@ const About = ({ restBase }) => {
                                 <figure>
                                     <img className="z-0"
                                         src={restData?.acf?.picture_of_me}
-                                        alt="A picture of Kaori" />
+                                        alt={restData?.acf?.picture_of_kaori} />
                                 </figure>
                             </div>
                         </div>
@@ -48,17 +49,18 @@ const About = ({ restBase }) => {
                             <p key={index}>{item.toolkit_item}</p>
                         ))}
 
-                        <Toolkit restBase={restBase} />
+                        {/* <Toolkit restBase={restBase} /> */}
 
                         <Love restBase={restBase} />
+                        <SeeMoreWorks restBase={restBase} />
+
+                    
                        
                     </article>
-
-                    <div>
-                        <Link to="/works">
-                            <p className="btn-yellow">See More Works</p>
-                        </Link>
-                    </div>
+                    
+                    
+                   
+                   
                 </>
                 :
                 <Loading />

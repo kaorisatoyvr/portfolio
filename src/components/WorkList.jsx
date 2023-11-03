@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
-import WorkList from './WorkList'
 
-const Works = ( { restBase, featuredImage } ) => {
-    const restPath = restBase + 'pages/151?&acf_format=standard&_embed'
+const WorkList = ( { restBase, featuredImage } ) => {
+    const restPath = restBase + 'kaori-work?&acf_format=standard&_embed'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
@@ -26,20 +25,20 @@ const Works = ( { restBase, featuredImage } ) => {
         <>
         { isLoaded ?
             <>
-            <article id={`post-${restData.id}`}>
-                <h1 className="text-center">{restData.title.rendered}</h1>
-                <WorkList restBase={restBase} featuredImage={featuredImage}/>
-             </article>
+            {restData.map(post => 
+                <article key={post.id} id={`post-${post.id}`}>
+                    <div className="box1">
+                        {post.featured_media !== 0 && 
+                            <Link className="text-center" to={`/works/${post.slug}`}>
+                                <figure dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}/>
+                            </Link>
+                        }
+                    <Link to={`/works/${post.slug}`}><h2 className= "btn-white">{post.title.rendered}</h2></Link>
+                    </div>
+                </article>
+                
+                )}
 
-                {/* About me button */}
-                <div>
-                    <Link to="/about">
-                        <p className="btn-yellow {
-">
-                        See About Me
-                        </p>
-                    </Link>
-                </div>
             </>
         : 
 
@@ -51,4 +50,4 @@ const Works = ( { restBase, featuredImage } ) => {
     )
 }
 
-export default Works
+export default WorkList

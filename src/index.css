@@ -91,7 +91,7 @@ svg {
     color: #FFF;
 	border-radius: 5px;
 	box-shadow: 0 3px 6px #d4d4d4;
-	margin: 0 auto;
+	/* margin: 0 auto; */
 }
 .btn-yellow {
 	width: fit-content;
@@ -100,7 +100,14 @@ svg {
 	text-align: center;
 	border-radius: 20px;
 	background-color: #EDE795;
-
+}
+.btn-white {
+	width: fit-content;
+	padding: 5px 15px;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 20px;
+	background-color: white;
 }
 
 /*--------------------------------------------------------------
