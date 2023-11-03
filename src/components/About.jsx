@@ -49,7 +49,7 @@ const About = ({ restBase, featuredImage, handleClick, active }) => {
                             <p key={index}>{item.toolkit_item}</p>
                         ))}
 
-                        {/* <Toolkit restBase={restBase} /> */}
+                        <Toolkit restBase={restBase} />
 
                         <Love restBase={restBase} />
                         <SeeMoreWorks restBase={restBase} />

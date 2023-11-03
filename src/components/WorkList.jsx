@@ -6,6 +6,7 @@ const WorkList = ( { restBase, featuredImage } ) => {
     const restPath = restBase + 'kaori-work?&acf_format=standard&_embed'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
+    const isWorkPage = window.location.pathname.startsWith('/works');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,7 +24,7 @@ const WorkList = ( { restBase, featuredImage } ) => {
     
     return (
         <>
-        { isLoaded ?
+        { isLoaded ? (
             <>
             {restData.map(post => 
                 <article key={post.id} id={`post-${post.id}`}>
@@ -40,12 +41,10 @@ const WorkList = ( { restBase, featuredImage } ) => {
                 )}
 
             </>
-        : 
+        ) : (
+            isWorkPage ? <Loading /> : null
 
-        // I can add if condition here (if it is on work page, loading if it is on home page, not loading.)
-
-            <Loading />
-        }
+       )}
         </>   
     )
 }

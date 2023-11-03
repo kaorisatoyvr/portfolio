@@ -35,22 +35,21 @@ const Work = ( { restBase, featuredImage } ) => {
                 <div className="flex items-center">
                     {restData.featured_media !== 0 && 
                         <div className="box2">
-                        <Link className="text-center" to={`/works/${slug}`}>
-                            
-                        <figure dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}/>
-            
-                        </Link>
+                            <Link className="text-center" to={`/works/${slug}`}>
+                                
+                            <figure dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}/>
+                
+                            </Link>
                         </div>
                     }
                     <div className="m-50 my-0 mx-auto">
-                        <div className="btn-yellow m-[2rem]">
+                        <div className="btn-yellow m-5 auto">
                         <Link to={restData?.acf?.live_site}>{restData?.acf?.live_site_title}</Link>
                         </div>
-                        <div className="btn-yellow">
+                        <div className="btn-yellow m-5 auto">
                         <Link to={restData?.acf?.github}>{restData?.acf?.github_title}</Link>
+                        </div>
                     </div>
-                    </div>
-                    
                 </div>
                 <section>
                     <h2>{restData?.acf?.overview_title}</h2>
@@ -65,17 +64,19 @@ const Work = ( { restBase, featuredImage } ) => {
                 <section>
                     <h2>{restData?.acf?.development_title}</h2>
                     <p>{restData?.acf?.development}</p>
+                    {restData?.acf?.code ? (  // Check if there is data
                     <pre className="w-3/4 my-0 mx-auto">
                         <code>{restData?.acf?.code}</code>
-                    </pre>  
+                    </pre>
+                    ) : null}
                 </section>
                 
                 <section>
                     <h2>{restData?.acf?.design_title}</h2>
                     <p>{restData?.acf?.design}</p>
-                    {/* <Link to={restData.acf.prototype_url}></Link> */}
+                    <Link to={restData.acf.prototype_url}></Link>
                     <p>{restData?.acf?.design_image}</p>
-                </section> 
+                </section>
                 
                 <section>
                     <h2>{restData?.acf?.reflection_title}</h2>

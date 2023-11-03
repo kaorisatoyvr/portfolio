@@ -85,7 +85,7 @@ svg {
 	box-shadow: 0 3px 6px #d4d4d4;
 	margin: 0 auto;
 }
-.box2{
+.box2 {
 	width: fit-content;
     background: white;
     color: #FFF;
@@ -93,10 +93,17 @@ svg {
 	box-shadow: 0 3px 6px #d4d4d4;
 	/* margin: 0 auto; */
 }
+.box-3 {
+	width: fit-content;
+    background: rgb(163,163,163);
+	background: linear-gradient(180deg, rgba(163,163,163,1) 0%, rgba(255,255,255,1) 81%, rgba(255,255,255,1) 100%);
+    color: #FFF;
+	border-radius: 5px;
+	box-shadow: 0 3px 6px #d4d4d4;
+}
 .btn-yellow {
 	width: fit-content;
 	padding: 5px 15px;
-	margin: 0 auto;
 	text-align: center;
 	border-radius: 20px;
 	background-color: #EDE795;

@@ -1,5 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, BrowserRouter} from 'react-router-dom'
-// import { Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home'
 import About from './components/About'
@@ -17,6 +16,7 @@ import Error from './components/Error';
 function App() {
   
   const restBase = 'https://kaorisato.ca/portfolio/wp-json/wp/v2/'
+  const isWorkPage = window.location.pathname.startsWith('/works');
   
   const featuredImage = ( featuredImageObject ) => {
     let imgWidth = featuredImageObject.media_details.sizes.full.width;
@@ -42,12 +42,12 @@ function App() {
       </div>
       <main id="main" className="w-4/5 m-auto h-full pt-20 top-[70px]">
         <Routes>
-          <Route path='/' element={<Home restBase={restBase} featuredImage={featuredImage}/>} />
+          <Route path='/' element={<Home restBase={restBase} featuredImage={featuredImage} isWorkPage={isWorkPage} />} />
           <Route path='/about' element={<About restBase={restBase} />} />
-          <Route path='/worklist' element={<WorkList restBase={restBase} featuredImage={featuredImage} />} />
-          <Route path='/works' element={<Works restBase={restBase} featuredImage={featuredImage} />} />
+          <Route path='/worklist' element={<WorkList restBase={restBase} featuredImage={featuredImage} isWorkPage={isWorkPage} />} />
+          <Route path='/works' element={<Works restBase={restBase} featuredImage={featuredImage} isWorkPage={isWorkPage} />} />
           <Route path='/works/:slug' element={<Work restBase={restBase} featuredImage={featuredImage} />} />
-          <Route path='/seemoreworks' element={<SeeMoreWorks restBase={restBase} featuredImage={featuredImage} />} />
+          <Route path='/seemoreworks' element={<SeeMoreWorks restBase={restBase} />} />
           <Route path='/love' element={<Love restBase={restBase} />} />
           <Route path='/toolkit' element={<Toolkit restBase={restBase} />} />
           <Route path='/filterButtons' element={<FilterButtons restBase={restBase} />} />
