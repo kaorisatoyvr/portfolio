@@ -44,10 +44,10 @@ const About = ({ restBase, featuredImage, handleClick, active }) => {
                                 </figure>
                             </div>
                         </div>
-                        <h2>{restData.acf.toolkit_title}</h2>
+                        {/* <h2>{restData.acf.toolkit_title}</h2>
                         {restData.acf.toolkit.map((item, index) => (
                             <p key={index}>{item.toolkit_item}</p>
-                        ))}
+                        ))} */}
 
                         <Toolkit restBase={restBase} />
 
@@ -63,7 +63,9 @@ const About = ({ restBase, featuredImage, handleClick, active }) => {
                    
                 </>
                 :
-                <Loading />
+                <div className="mt-[10rem]">
+                    <Loading />
+                </div>
             }
         </>
     )

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 const WorkList = ( { restBase, featuredImage } ) => {
     const restPath = restBase + 'kaori-work?&acf_format=standard&_embed'
@@ -34,7 +36,8 @@ const WorkList = ( { restBase, featuredImage } ) => {
                                 <figure dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}/>
                             </Link>
                         }
-                    <Link to={`/works/${post.slug}`}><h2 className= "btn-white">{post.title.rendered}</h2></Link>
+                    <Link to={`/works/${post.slug}`}><p className= "btn-white">{post.title.rendered}<span> </span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></p>
+                    </Link>
                     </div>
                 </article>
                 
@@ -42,7 +45,11 @@ const WorkList = ( { restBase, featuredImage } ) => {
 
             </>
         ) : (
-            isWorkPage ? <Loading /> : null
+            isWorkPage ? 
+            <div className="mt-[10rem]">
+                <Loading />
+            </div>
+         : null
 
        )}
         </>   

@@ -44,14 +44,16 @@ const Love = ({ restBase }) => {
                                 {restData.acf.love.map((slides) => (
                                     <SwiperSlide key={slides.love_text}>
                                         <img className="w-24 my-0 mx-auto" src={slides.love_image} alt={slides.love_text} />
-                                        <p className="text-center my-10">{slides.love_text}</p>
+                                        <p className="text-center my-10 text-2xl">{slides.love_text}</p>
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
                         </div>
                 </>
                 :
-                <Loading />
+                <div className="mt-[10rem]">
+                    <Loading />
+                </div>
             }
         </>
     )

@@ -34,8 +34,7 @@ const Works = ( { restBase, featuredImage } ) => {
                 {/* About me button */}
                 <div>
                     <Link to="/about">
-                        <p className="btn-yellow {
-">
+                        <p className="btn-yellow my-0 mx-auto">
                         See About Me
                         </p>
                     </Link>
@@ -45,7 +44,9 @@ const Works = ( { restBase, featuredImage } ) => {
 
         // I can add if condition here (if it is on work page, loading if it is on home page, not loading.)
 
+        <div className="mt-[10rem]">
             <Loading />
+        </div>
         }
         </>   
     )

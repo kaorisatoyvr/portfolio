@@ -33,7 +33,7 @@ const Contacts = ( {restBase} ) => {
                 <h2>{restData.acf.contacts_title}</h2>
                     <div className="flex justify-center">
                     
-                    <a href={`mailto:${restData.acf.email}`}><img className="w-10 m-5 fill-[#492C0E]" src={email} alt={restData.acf.email} /></a>
+                    <a href={`mailto:${restData.acf.email}`}><img className="w-10 m-5" src={email} alt={restData.acf.email} style={{ fill: '#492C0E' }}/></a>
                     
 
                     <a href={`${restData.acf.linkedin}`} target="_blank" rel="noopener noreferrer"><img className="w-10 m-5" src={restData?.acf?.linkedin_image} alt={restData.acf.linkedin} /></a>
@@ -43,7 +43,9 @@ const Contacts = ( {restBase} ) => {
                 </div>
             </article>
         : 
+        <div className="mt-[10rem]">
             <Loading />
+        </div>
         }
         </>
     )

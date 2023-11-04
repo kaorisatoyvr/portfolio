@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 const Works = ( { restBase } ) => {
     const restPath = restBase + 'pages/151?&acf_format=standard&_embed'
@@ -25,6 +27,7 @@ const Works = ( { restBase } ) => {
         <>
         { isLoaded ?
             <>
+                <h2 className="text-center text-2xl mt-20" >{restData.acf.see_more_works_title}</h2>
             <div className="flex justify-center items-center mt-10">
             
                 <div className="flex items-center" id={`post-${restData.id}`}>
@@ -33,7 +36,10 @@ const Works = ( { restBase } ) => {
                             <Link to={item.work_link}>
                                 <p className="text-xs">{item.single_work_title}</p>
                                 <img className="w-36 m-5" src={item.work_image} alt={item.single_work_title} />
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <div className="text-right">
+                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                </div>
+                                
                             </Link>
                        </div>
                         ))}
@@ -44,7 +50,8 @@ const Works = ( { restBase } ) => {
                 <div>
                         <Link to="/works">
                             <p className="btn-yellow">
-                            {restData.acf.see_more_works_title}
+                            {restData.acf.see_more_works_title}<span> </span>
+                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                             </p>
                         </Link>
                 </div>
@@ -52,7 +59,9 @@ const Works = ( { restBase } ) => {
             </>
         :
 
+        <div className="mt-[10rem]">
             <Loading />
+        </div>
         }
         </>   
     )

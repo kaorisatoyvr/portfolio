@@ -29,9 +29,11 @@ const Home = ( {restBase, featuredImage} ) => {
                 <section className="home__title section-1 mt-[240px] h-[50vh] block">
                     <h1 className="font-brightwall text-center">{restData.title.rendered}</h1>
                     <p className="text-center" >{restData.acf.sub_title}</p>
+                    <div className="relative absolute top-[300px]">
                     <a id="scroll-btn" href="#works"></a>
+                    </div>
                 </section>
-                <div className="m-[10rem]">
+                <div className="m-[10rem] block">
 
                 </div>
                 <section id="works" className="h-[180vh] block">
@@ -40,7 +42,9 @@ const Home = ( {restBase, featuredImage} ) => {
             </article>
                 </>
         : 
-            <Loading /> 
+        <div className="mt-[10rem]">
+            <Loading />
+        </div>
         }
         </>            
     )

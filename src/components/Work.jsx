@@ -42,11 +42,11 @@ const Work = ( { restBase, featuredImage } ) => {
                             </Link>
                         </div>
                     }
-                    <div className="m-50 my-0 mx-auto">
-                        <div className="btn-yellow m-5 auto">
+                    <div className="my-5 mx-auto">
+                        <div className="btn-yellow">
                         <Link to={restData?.acf?.live_site}>{restData?.acf?.live_site_title}</Link>
                         </div>
-                        <div className="btn-yellow m-5 auto">
+                        <div className="btn-yellow">
                         <Link to={restData?.acf?.github}>{restData?.acf?.github_title}</Link>
                         </div>
                     </div>
@@ -85,12 +85,23 @@ const Work = ( { restBase, featuredImage } ) => {
 
                             
             </article>
+                    {/* About me button */}
+                <div>
+                    <Link to="/about">
+                        <p className="btn-yellow my-0 mx-auto">
+                        See About Me
+                        </p>
+                    </Link>
+                </div>
+
              <SeeMoreWorks restBase={restBase} featuredImage={featuredImage} />
 
         </>
         
     : 
+    <div className="mt-[10rem]">
         <Loading />
+    </div>
     }
     </>   
     )

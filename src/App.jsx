@@ -55,7 +55,7 @@ function App() {
         </Routes>
       </main>
       <footer>
-          <section id="contacts" className="h-36">
+          <section id="contacts" className="h-36 mt-10">
               <Contacts restBase={restBase} />
           </section>
         <p className="copyright"><a href="https://kaorisato.ca/" target="_blank" rel="noopener noreferrer">&#169; 2023 Kaori Sato</a>.</p>

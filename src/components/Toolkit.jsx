@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Loading from './Loading'
 import { AnimatePresence, motion } from "framer-motion";
-import FilterButtons from "./FilterButtons";
+// import FilterButtons from "./FilterButtons";
 
 const Toolkit = ({ restBase }) => {
     const restPath = restBase + 'pages/16?&acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
+    // const [displayData, setDisplayData] = useState([]);
+    const [active, setActive] = useState("all");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,25 +25,38 @@ const Toolkit = ({ restBase }) => {
         fetchData()
     }, [restPath])
 
-    const [displayData, setDisplayData] = useState([]);
-    const [active, setActive] = useState("all");
-    const [toolkitFilters, setToolkitFilters] = useState([]);
+    const FilterBar = ({ handleClick, active }) => {
+
+
+        return (
+          <div className="gap-2" style={{ marginBottom: '1rem' }}>
+            {restData.acf.toolkit_filters.split(' ').map((item) => (
+              <button
+                className={active === item.toLowerCase() && 'active'}
+                onClick={() => handleClick(item.toLowerCase())}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+        );
+      };
 
     const handleCategoryClick = (filters) => {
         
         setActive(filters);
         
         if (filters === "all") {
-        setDisplayData(restData?.acf.toolkit_item || []);
+        {restData?.acf.toolkit_item};
         return;
         } else {
 
             const filteredData = (restData?.acf.toolkit || []).filter((item) => item.filters.includes(filters));
             setDisplayData(filteredData);
         
-        // setTimeout(() => {
-        // setDisplayData(filteredData);
-        // }, 400);     
+        setTimeout(() => {
+        setDisplayData(filteredData);
+        }, 400);     
         };
         
   return (
@@ -51,14 +66,31 @@ const Toolkit = ({ restBase }) => {
             
         <div id={`post-${restData.id}`}>
             <h2 className="text-lg">{restData.acf.toolkit_title}</h2>
-            
-
             <div>
-            <FilterButtons active={active} filters={toolkitFilters} handleClick={handleCategoryClick} />
+            {/* <div className="flex">
+                <div className="gap-2 flex" style={{ marginBottom: "1rem" }}>
+                {restData.acf.toolkit_filters.split(' ').map((item, index) => (
+                    <div className="m-5 bg-white w-fit p-2 rounded-xl" key={index}>
+                      <button
+                          className={active === item.toLowerCase() && "active"}
+                          onClick={() => handleClick(item.toLowerCase())}
+                      >
+                          {item}
+                      </button>
+                    </div>
+                  ))}
+              </div>
+            </div> */}
+            <div className="flex flex-wrap">
+                        {restData.acf.toolkit.map((item, index) => (
+                            <p className="p-2" key={index}>{item.toolkit_item}</p>
+                        ))} 
+                        </div>
+           
 
                 <div className="grid grid-col-3 gap-2">
                         <AnimatePresence>
-                    {restData.acf.toolkit.map(({toolkit_item, filters} , index) => (
+                    {displayData.map(({toolkit_item, filters} , index) => (
                         <motion.div
                         style={{ overflow: "hidden" }}
                         key={index}
@@ -77,7 +109,10 @@ const Toolkit = ({ restBase }) => {
         </div>
         </>
     ) : (
-        <Loading />
+
+        <div className="mt-[10rem]">
+            <Loading />
+        </div>
     )}
 
 </>
