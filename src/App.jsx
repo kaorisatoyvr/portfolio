@@ -13,7 +13,7 @@ import Contacts from './components/Contacts'
 import Error from './components/Error';
 import Menu from './components/Menu'
 import MenuMobile from './components/MenuMobile'
-
+import ScrollToTop from './components/scrollToTop'
 
 function App() {
   
@@ -39,6 +39,7 @@ function App() {
 
   return (
     <Router basename="/">
+      <ScrollToTop />
       <div className="z-9999">
         <Header />
       </div>
