@@ -28,15 +28,15 @@ const About = ({ restBase, featuredImage, handleClick, active }) => {
         <>
             {isLoaded ?
                 <>
-                    <article id={`post-${restData.id}`}>
+                    <article className="mt-5" id={`post-${restData.id}`}>
                             <h1>{restData.title.rendered}</h1>
-                        <div className="flex">
-                            <div className="w-3/4 m-10">
+                        <div className="sm:flex">
+                            <div className="sm:w-3/4 m-10 text-sm sm:text-lg">
                                 <p>{restData.acf.about_me_content}</p>
                                 <p>{restData.acf.about_content2}</p>
                                 <p>{restData.acf.about_content3}</p>
                             </div>
-                            <div className="w-1/4 m-10">
+                            <div className="w-1/2 my-0 mx-auto sm:w-1/4 sm:m-10">
                                 <figure>
                                     <img className="z-0"
                                         src={restData?.acf?.picture_of_me}
@@ -50,7 +50,6 @@ const About = ({ restBase, featuredImage, handleClick, active }) => {
                         ))} */}
 
                         <Toolkit restBase={restBase} />
-
                         <Love restBase={restBase} />
                         <SeeMoreWorks restBase={restBase} />
 

@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
 import WorkList from './WorkList'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+
 
 const Works = ( { restBase, featuredImage } ) => {
     const restPath = restBase + 'pages/151?&acf_format=standard&_embed'
@@ -28,14 +31,16 @@ const Works = ( { restBase, featuredImage } ) => {
             <>
             <article id={`post-${restData.id}`}>
                 <h1 className="text-center">{restData.title.rendered}</h1>
+                <div className="sm:flex flex-wrap gap-10 justify-center">
                 <WorkList restBase={restBase} featuredImage={featuredImage}/>
+                </div>
              </article>
 
                 {/* About me button */}
                 <div>
                     <Link to="/about">
                         <p className="btn-yellow my-0 mx-auto">
-                        See About Me
+                        About Me <span> </span><FontAwesomeIcon icon={faAngleRight} />
                         </p>
                     </Link>
                 </div>

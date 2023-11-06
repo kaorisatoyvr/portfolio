@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Works = ( { restBase } ) => {
     const restPath = restBase + 'pages/151?&acf_format=standard&_embed'
@@ -27,17 +27,17 @@ const Works = ( { restBase } ) => {
         <>
         { isLoaded ?
             <>
-                <h2 className="text-center text-2xl mt-20" >{restData.acf.see_more_works_title}</h2>
-            <div className="flex justify-center items-center mt-10">
+                <h2 className="text-center mt-20" >{restData.acf.see_more_works_title}</h2>
+            <div className="lg:flex justify-center items-center mt-10">
             
-                <div className="flex items-center" id={`post-${restData.id}`}>
+                <div className="flex justify-center" id={`post-${restData.id}`}>
                      {restData?.acf.see_more_works.map((item, index) => (
                          <div className="m-2 box-3 p-2" key={index}>
                             <Link to={item.work_link}>
-                                <p className="text-xs">{item.single_work_title}</p>
-                                <img className="w-36 m-5" src={item.work_image} alt={item.single_work_title} />
+                                <p className="fit-content text-[9px] sm:text-base">{item.single_work_title}</p>
+                                <img className="w-36 lg:m-5" src={item.work_image} alt={item.single_work_title} />
                                 <div className="text-right">
-                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                <FontAwesomeIcon icon={faAngleRight} />
                                 </div>
                                 
                             </Link>
@@ -51,7 +51,7 @@ const Works = ( { restBase } ) => {
                         <Link to="/works">
                             <p className="btn-yellow">
                             {restData.acf.see_more_works_title}<span> </span>
-                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                            <FontAwesomeIcon icon={faAngleRight} />
                             </p>
                         </Link>
                 </div>

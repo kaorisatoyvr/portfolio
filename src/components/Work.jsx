@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
 import SeeMoreWorks from './SeeMoreWorks'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Work = ( { restBase, featuredImage } ) => {
     const { slug } = useParams();
@@ -32,7 +34,7 @@ const Work = ( { restBase, featuredImage } ) => {
                 <h1>{restData?.title?.rendered}</h1>
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData?.content?.rendered}}></div>
                 
-                <div className="flex items-center">
+                <div className="lg:flex items-center">
                     {restData.featured_media !== 0 && 
                         <div className="box2">
                             <Link className="text-center" to={`/works/${slug}`}>
@@ -44,10 +46,10 @@ const Work = ( { restBase, featuredImage } ) => {
                     }
                     <div className="my-5 mx-auto">
                         <div className="btn-yellow">
-                        <Link to={restData?.acf?.live_site}>{restData?.acf?.live_site_title}</Link>
+                        <Link to={restData?.acf?.live_site}>{restData?.acf?.live_site_title}<span> </span><FontAwesomeIcon icon={faAngleRight} /></Link>
                         </div>
                         <div className="btn-yellow">
-                        <Link to={restData?.acf?.github}>{restData?.acf?.github_title}</Link>
+                        <Link to={restData?.acf?.github}>{restData?.acf?.github_title}<span> </span><FontAwesomeIcon icon={faAngleRight} /></Link>
                         </div>
                     </div>
                 </div>
@@ -89,7 +91,7 @@ const Work = ( { restBase, featuredImage } ) => {
                 <div>
                     <Link to="/about">
                         <p className="btn-yellow my-0 mx-auto">
-                        See About Me
+                        About Me<span> </span><FontAwesomeIcon icon={faAngleRight} />
                         </p>
                     </Link>
                 </div>

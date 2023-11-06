@@ -26,17 +26,17 @@ const Home = ( {restBase, featuredImage} ) => {
         { isLoaded ?
         <>  
             <article id={`post-${restData.id}`}>
-                <section className="home__title section-1 mt-[240px] h-[50vh] block">
-                    <h1 className="font-brightwall text-center">{restData.title.rendered}</h1>
+                <section className="home__title section-1 mt-[240px] h-[40hv] lg:h-[50vh] block">
+                    <h1 className="font-brightwall text-center lg:text-[2.5rem]">{restData.title.rendered}</h1>
                     <p className="text-center" >{restData.acf.sub_title}</p>
-                    <div className="relative absolute top-[300px]">
+                    <div className="relative absolute top-[170px] lg:top-[300px]">
                     <a id="scroll-btn" href="#works"></a>
                     </div>
                 </section>
-                <div className="m-[10rem] block">
+                <div className="m-[18rem] lg:m-[10rem] block">
 
                 </div>
-                <section id="works" className="h-[180vh] block">
+                <section id="works" className="lg:h-[180vh] block">
                 <Works restBase={restBase} featuredImage={featuredImage}/>
                 </section>
             </article>

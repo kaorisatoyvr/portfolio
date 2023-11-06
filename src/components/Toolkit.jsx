@@ -7,7 +7,7 @@ const Toolkit = ({ restBase }) => {
     const restPath = restBase + 'pages/16?&acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
-    // const [displayData, setDisplayData] = useState([]);
+    const [displayData, setDisplayData] = useState([]);
     const [active, setActive] = useState("all");
 
     useEffect(() => {
@@ -15,82 +15,88 @@ const Toolkit = ({ restBase }) => {
             const response = await fetch(restPath)
             if (response.ok) {
                 const data = await response.json()
-                console.log('Fetched data:', data);
+                // console.log('Fetched data:', data);
                 setData(data)
                 setLoadStatus(true)
             } else {
-                setLoadStatus(false)
+                // setLoadStatus(false)
             }
         }
         fetchData()
     }, [restPath])
 
-    const FilterBar = ({ handleClick, active }) => {
+    // const FilterBar = ({ handleClick, active }) => {
 
+    //     return (
+    //       <div className="gap-2" style={{ marginBottom: '1rem' }}>
+    //         {restData.acf.toolkit_filters.split(' ').map((item) => (
+    //           <button
+    //             className={active === item.toLowerCase() ? 'active' : ''}
+    //             onClick={() => handleClick(item.toLowerCase())}
+    //           >
+    //             {item}
+    //           </button>
+    //         ))}
+    //       </div>
+    //     );
+    //   };
 
-        return (
-          <div className="gap-2" style={{ marginBottom: '1rem' }}>
-            {restData.acf.toolkit_filters.split(' ').map((item) => (
-              <button
-                className={active === item.toLowerCase() && 'active'}
-                onClick={() => handleClick(item.toLowerCase())}
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-        );
-      };
-
-    const handleCategoryClick = (filters) => {
-        
-        setActive(filters);
-        
-        if (filters === "all") {
-        {restData?.acf.toolkit_item};
+    const handleCategoryClick = (categories) => {
+    if (categories === active) return;
+        setActive(categories);
+        setDisplayData([]);
+    
+    if (categories === "all") {
+        setDisplayData(restData.acf.toolkit || []);
         return;
-        } else {
+    }
+    
+    const filteredData = (restData.acf.toolkit || []).filter((item) =>
+        item.categories.includes(category)
+    );
+    setDisplayData(filteredData);
+    };
+    
+    // const filteredData = (restData.acf.toolkit || []).filter((item) => {
+    //      item.category === categories;
+    //     console.log('Category:', categories);
+    //     console.log('Item Category:', item.categories);
+    //   });
+    //   console.log('Filtered Data:', filteredData);
+      
 
-            const filteredData = (restData?.acf.toolkit || []).filter((item) => item.filters.includes(filters));
-            setDisplayData(filteredData);
-        
-        setTimeout(() => {
-        setDisplayData(filteredData);
-        }, 400);     
-        };
+    
+
         
   return (
-    <>
+        <>
         {isLoaded ? (
             <>
             
-        <div id={`post-${restData.id}`}>
-            <h2 className="text-lg">{restData.acf.toolkit_title}</h2>
+        <div id={`post-${restData.id}`} className="box2 p-3">
+            <h2>{restData.acf.toolkit_title}</h2>
             <div>
-            {/* <div className="flex">
-                <div className="gap-2 flex" style={{ marginBottom: "1rem" }}>
+
+            {/* Filter buttons */}
+            <div className="flex">
+                <div className="gap-2 flex flex-wrap" style={{ marginBottom: "1rem" }}>
                 {restData.acf.toolkit_filters.split(' ').map((item, index) => (
-                    <div className="m-5 bg-white w-fit p-2 rounded-xl" key={index}>
+                    <div className="m-1 bg-[#492C0E] text-neutral-50 w-28 p-1 rounded-md text-center hover:bg-[#EDE795] hover:text-[#492C0E]" key={index}>
                       <button
-                          className={active === item.toLowerCase() && "active"}
-                          onClick={() => handleClick(item.toLowerCase())}
+                          className={active === item.toLowerCase() ? "active" : ""}
+                          onClick={() => handleCategoryClick(item.toLowerCase())}
                       >
                           {item}
                       </button>
                     </div>
                   ))}
               </div>
-            </div> */}
-            <div className="flex flex-wrap">
-                        {restData.acf.toolkit.map((item, index) => (
-                            <p className="p-2" key={index}>{item.toolkit_item}</p>
-                        ))} 
-                        </div>
-           
+            </div>
 
-                <div className="grid grid-col-3 gap-2">
+           {/* Toolkit items */}
+                <div className="flex flex-wrap">
                         <AnimatePresence>
-                    {displayData.map(({toolkit_item, filters} , index) => (
+                        {displayData.map(({ toolkit_item, categories } , index) => (
                         <motion.div
                         style={{ overflow: "hidden" }}
                         key={index}
@@ -99,7 +105,7 @@ const Toolkit = ({ restBase }) => {
                         animate={{ transform: "scale(1)" }}
                         exit={{ transform: "scale(0)" }}
                         >
-                        <p>{toolkit_item}</p>
+                        <p className="border bg-[#fafafa] text-center rounded-full text-sm py-1 px-3 w-fit m-2">{toolkit_item}</p>
                         </motion.div>
                     ))}
                     </AnimatePresence>
@@ -117,7 +123,6 @@ const Toolkit = ({ restBase }) => {
 
 </>
   );
-};
-}
+    }
 
 export default Toolkit;

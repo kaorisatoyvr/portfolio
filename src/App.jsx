@@ -11,6 +11,8 @@ import Work from './components/Work'
 import SeeMoreWorks from './components/SeeMoreWorks'
 import Contacts from './components/Contacts'
 import Error from './components/Error';
+import Menu from './components/Menu'
+import MenuMobile from './components/MenuMobile'
 
 
 function App() {
@@ -40,7 +42,7 @@ function App() {
       <div className="z-9999">
         <Header />
       </div>
-      <main id="main" className="w-4/5 m-auto h-full pt-20 top-[70px]">
+      <main id="main" className="w-11/12 lg:w-4/5 m-auto h-full lg:pt-1 mt-[70px] top-[70px]">
         <Routes>
           <Route path='/' element={<Home restBase={restBase} featuredImage={featuredImage} isWorkPage={isWorkPage} />} />
           <Route path='/about' element={<About restBase={restBase} />} />
@@ -52,13 +54,15 @@ function App() {
           <Route path='/toolkit' element={<Toolkit restBase={restBase} />} />
           <Route path='/filterButtons' element={<FilterButtons restBase={restBase} />} />
           <Route path="*" element={< Error />} />
+          <Route path='/menu' element={<Menu />} />
+          <Route path='/menumobile' element={<MenuMobile />} />
         </Routes>
       </main>
       <footer>
           <section id="contacts" className="h-36 mt-10">
               <Contacts restBase={restBase} />
           </section>
-        <p className="copyright"><a href="https://kaorisato.ca/" target="_blank" rel="noopener noreferrer">&#169; 2023 Kaori Sato</a>.</p>
+        <p className="copyright mb-20 lg:mb-0"><a href="https://kaorisato.ca/" target="_blank" rel="noopener noreferrer">&#169; 2023 Kaori Sato</a>.</p>
       </footer>
     </Router>
   )

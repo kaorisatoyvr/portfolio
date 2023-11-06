@@ -28,7 +28,7 @@ const Love = ({ restBase }) => {
         <>
             {isLoaded ?
                 <>  
-                        <div className="w-1/2 my-0 mx-auto">
+                        <div className="md:w-1/2 mt-[3rem] mb-0 mx-auto">
                             <Swiper
                                 modules={[Navigation, Pagination, Scrollbar, A11y, EffectFlip, Autoplay]}
                                 autoplay={{ delay: 2500 }}
@@ -38,13 +38,13 @@ const Love = ({ restBase }) => {
                                 effect="flip"
                                 pagination={{ clickable: true }}
                                 // scrollbar={{ draggable: true }}
-                                onSlideChange={() => console.log('slide change')}
-                                onSwiper={(swiper) => console.log(swiper)}
+                                // onSlideChange={() => console.log('slide change')}
+                                // onSwiper={(swiper) => console.log(swiper)}
                             >
                                 {restData.acf.love.map((slides) => (
                                     <SwiperSlide key={slides.love_text}>
-                                        <img className="w-24 my-0 mx-auto" src={slides.love_image} alt={slides.love_text} />
-                                        <p className="text-center my-10 text-2xl">{slides.love_text}</p>
+                                        <img className="w-20 lg:w-24 my-0 mx-auto" src={slides.love_image} alt={slides.love_text} />
+                                        <p className="text-center my-10 lg:text-2xl">{slides.love_text}</p>
                                     </SwiperSlide>
                                 ))}
                             </Swiper>

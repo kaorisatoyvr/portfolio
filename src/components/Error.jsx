@@ -8,7 +8,7 @@ import useMediaQuery from '../hooks/useMediaQuery';
 function Error() {
     const isDesktop = useMediaQuery('(min-width: 1024px)');
     return (
-        <div class="error__container">
+        <div className="error__container">
             <NavLink className="err_link" to="/">
             <img className={isDesktop ? "error__img-desktop error" : "error__img-mobile error"} src={error} alt="error" />
             
