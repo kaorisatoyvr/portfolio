@@ -13,7 +13,7 @@ import Contacts from './components/Contacts'
 import Error from './components/Error';
 import Menu from './components/Menu'
 import MenuMobile from './components/MenuMobile'
-import ScrollToTop from './components/scrollToTop'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   
@@ -63,7 +63,7 @@ function App() {
           <section id="contacts" className="h-36 mt-10">
               <Contacts restBase={restBase} />
           </section>
-        <p className="copyright mb-20 lg:mb-0"><a href="https://kaorisato.ca/" target="_blank" rel="noopener noreferrer">&#169; 2023 Kaori Sato</a>.</p>
+        <p className="copyright mb-20 md:mb-0"><a href="https://kaorisato.ca/" target="_blank" rel="noopener noreferrer">&#169; 2023 Kaori Sato</a>.</p>
       </footer>
     </Router>
   )

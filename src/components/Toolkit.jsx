@@ -73,7 +73,7 @@ const Toolkit = ({ restBase }) => {
         {isLoaded ? (
             <>
             
-        <div id={`post-${restData.id}`} className="box2 p-3">
+        <div id={`post-${restData.id}`} className="w-3/4 my-0 mx-auto box2 p-3">
             <h2>{restData.acf.toolkit_title}</h2>
             <div>
 
@@ -81,7 +81,7 @@ const Toolkit = ({ restBase }) => {
             <div className="flex">
                 <div className="gap-2 flex flex-wrap" style={{ marginBottom: "1rem" }}>
                 {restData.acf.toolkit_filters.split(' ').map((item, index) => (
-                    <div className="m-1 bg-[#492C0E] text-neutral-50 w-28 p-1 rounded-md text-center hover:bg-[#EDE795] hover:text-[#492C0E]" key={index}>
+                    <div className="m-1 bg-[#492C0E] text-neutral-50 w-28 p-1 rounded-md text-center hover:bg-[#EDE795] hover:text-[#492C0E] z-1" key={index}>
                       <button
                           className={active === item.toLowerCase() ? "active" : ""}
                           onClick={() => handleCategoryClick(item.toLowerCase())}

@@ -4,11 +4,14 @@ import useMediaQuery from '../hooks/useMediaQuery';
 import { Squash as Hamburger } from 'hamburger-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 
 function MenuMobile() {
     const [isOpen, setOpen] = useState(false)
-    const isDesktop = useMediaQuery('(min-width: 1024px)');
+    const isDesktop = useMediaQuery('(min-width: 768px)');
     const closeMobileMenu = () => {
         setOpen(false);
     }
@@ -22,21 +25,37 @@ function MenuMobile() {
                 
                 {isOpen &&
                     <div>
-                    <nav className="site-navigation text-brown fixed bottom-[20px] left-[25%]">
-                    <ul>
-                        <div className="flex flex-col">
-                            <li className="circle"><NavLink to='/' onClick={closeMobileMenu} end>
-                            <FontAwesomeIcon icon={faHouse} />
-                            Home</NavLink></li>
-                            </div>
-                        <li className="circle"><NavLink to='/about' onClick={closeMobileMenu}>About</NavLink></li>
-                        <li className="circle"><NavLink to='/works' onClick={closeMobileMenu}>Works</NavLink></li>
-                        <li className="circle"><a href='#contacts' onClick={closeMobileMenu}>Contacts</a></li>
+                    <nav className="mobile-nav">
+                    <ul className="gap-1 sm:gap-3">
+                        <div className="circle flex flex-col">
+                            <li><NavLink to='/' onClick={closeMobileMenu} end>
+                            <FontAwesomeIcon icon={faHouse} size="xl" />
+                            <p className="text-xs text-center">Home</p>
+                            </NavLink></li>
+                        </div>
+                        <div className="circle flex flex-col">
+                            <li><NavLink to='/about' onClick={closeMobileMenu}>
+                            <FontAwesomeIcon icon={faUser} size="xl" />
+                            <p className="text-xs text-center">About</p>
+                            </NavLink></li>
+                        </div>
+                        <div className="circle flex flex-col">
+                        <li><NavLink to='/works' onClick={closeMobileMenu}>
+                             <FontAwesomeIcon icon={faLaptopCode} size="xl" />
+                            <p className="text-xs text-center">Works</p>
+                            </NavLink></li>
+                        </div>
+                        <div className="circle flex flex-col">
+                            <li><a href='#contacts' onClick={closeMobileMenu}>
+                            <FontAwesomeIcon icon={faEnvelope} size="xl" />
+                            <p className="text-xs text-center m-0">Contacts</p>
+                            </a></li>
+                        </div>
                     </ul>
                     </nav>
                 </div>
                 }   
-                <div className="fixed bottom-0 left-[47.5%] bg-[#ede795d8] w-18 h-18 rounded-full border black">
+                <div className="fixed bottom-0 left-[46.5%] transform: translate(-50%, -50%); bg-[#94B98E] w-18 h-18 rounded-full border black">
                 <Hamburger 
                     toggled={isOpen} 
                     toggle={setOpen}

@@ -5,10 +5,9 @@ import Menu from './Menu';
 import MenuMobile from './MenuMobile';
 
 function Header() {
-    const isDesktop = useMediaQuery('(min-width: 1024px)');
+    const isDesktop = useMediaQuery('(min-width: 768px)');
 
-    return (
-        
+    return (     
         <header id="masthead" >
             {isDesktop ? (
                     
@@ -19,16 +18,6 @@ function Header() {
                             </a>
                         </div>
                         <Menu />
-                        {/* <div>
-                            <nav className="site-navigation text-brown">
-                            <ul>
-                                <li><NavLink to='/' end>Home</NavLink></li>
-                                <li><NavLink to='/about'>About</NavLink></li>
-                                <li><NavLink to='/works'>Works</NavLink></li>
-                                <li><a href='#contacts'>Contacts</a></li>
-                            </ul>
-                            </nav>
-                        </div> */}
                     </div>
 
                 ) : ( 
@@ -40,7 +29,6 @@ function Header() {
                             </a>
                         </div>
                         <div className="mobile-header fixed bottom-0 w-full my-0 mx-auto">
-                            {/* <p>add hamburger menu later</p> */}
                             <MenuMobile />
                          </div>
                     </div>

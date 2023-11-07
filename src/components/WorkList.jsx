@@ -29,7 +29,7 @@ const WorkList = ( { restBase, featuredImage } ) => {
         { isLoaded ? (
             <>
             {restData.map(post => 
-                <article className="" key={post.id} id={`post-${post.id}`}>
+                <article className="mb-0" key={post.id} id={`post-${post.id}`}>
                     <div className="box1">
                         {post.featured_media !== 0 && 
                             <Link className="text-center" to={`/works/${post.slug}`}>

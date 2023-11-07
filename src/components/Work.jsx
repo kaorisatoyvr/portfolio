@@ -5,12 +5,14 @@ import Loading from './Loading'
 import SeeMoreWorks from './SeeMoreWorks'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import Accordion from 'react-bootstrap/Accordion';
 
 const Work = ( { restBase, featuredImage } ) => {
     const { slug } = useParams();
     const restPath = restBase+ `kaori-work/?slug=${slug}&acf_format=standard&_embed`;
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
+    const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,7 +35,7 @@ const Work = ( { restBase, featuredImage } ) => {
             <article id={`kaori-work-${restData.id}`}>
                 <h1>{restData?.title?.rendered}</h1>
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData?.content?.rendered}}></div>
-                
+                {restPath}
                 <div className="lg:flex items-center">
                     {restData.featured_media !== 0 && 
                         <div className="box2">
@@ -62,22 +64,30 @@ const Work = ( { restBase, featuredImage } ) => {
                     <h2>{restData?.acf?.tool_i_used_title}</h2>
                     <p>{restData?.acf?.tool_i_used}</p>
                 </section>
-                
+
                 <section>
-                    <h2>{restData?.acf?.development_title}</h2>
-                    <p>{restData?.acf?.development}</p>
+                    <div className="accordion-title"
+                        onClick={() => setIsActive(!isActive)}>
+                        <h2>{restData?.acf?.development_title} {isActive ? '-' : '+'}</h2>
+                    </div>
+                    {isActive && <div className="accordion-content">
+                        <p>{restData?.acf?.development}</p>
                     {restData?.acf?.code ? (  // Check if there is data
                     <pre className="w-3/4 my-0 mx-auto">
                         <code>{restData?.acf?.code}</code>
                     </pre>
-                    ) : null}
+                    ) : null}</div>}
                 </section>
                 
                 <section>
-                    <h2>{restData?.acf?.design_title}</h2>
+                    <div className="accordion-title"
+                        onClick={() => setIsActive(!isActive)}>
+                    <h2>{restData?.acf?.design_title} {isActive ? '-' : '+'}</h2>
+                    </div>
+                    {isActive && <div className="accordion-content">
                     <p>{restData?.acf?.design}</p>
                     <Link to={restData.acf.prototype_url}></Link>
-                    <p>{restData?.acf?.design_image}</p>
+                    <p>{restData?.acf?.design_image}</p></div>}
                 </section>
                 
                 <section>

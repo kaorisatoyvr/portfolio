@@ -36,7 +36,7 @@ const About = ({ restBase, featuredImage, handleClick, active }) => {
                                 <p>{restData.acf.about_content2}</p>
                                 <p>{restData.acf.about_content3}</p>
                             </div>
-                            <div className="w-1/2 my-0 mx-auto sm:w-1/4 sm:m-10">
+                            <div className="w-1/3 my-0 mx-auto sm:w-1/4 sm:m-10">
                                 <figure>
                                     <img className="z-0"
                                         src={restData?.acf?.picture_of_me}

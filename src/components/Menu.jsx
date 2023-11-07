@@ -6,7 +6,7 @@ import { Fade as Hamburger } from 'hamburger-react'
 
 function Menu() {
     const [isOpen, setOpen] = useState(false)
-    const isDesktop = useMediaQuery('(min-width: 1024px)');
+    const isDesktop = useMediaQuery('(min-width: 768px)');
     const closeMobileMenu = () => {
         setOpen(false);
     }
@@ -14,7 +14,7 @@ function Menu() {
     return (
         <>
             {isDesktop ? (
-            <div className="flex justify-start flex-row-reverse">
+            <div className="flex justify-start flex-row-reverse rounded-full">
             <Hamburger 
                 toggled={isOpen} 
                 toggle={setOpen}

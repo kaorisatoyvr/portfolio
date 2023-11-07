@@ -28,7 +28,7 @@ const Love = ({ restBase }) => {
         <>
             {isLoaded ?
                 <>  
-                        <div className="md:w-1/2 mt-[3rem] mb-0 mx-auto">
+                        <div className="w-3/4 md:w-1/2 mt-[3rem] mb-0 mx-auto">
                             <Swiper
                                 modules={[Navigation, Pagination, Scrollbar, A11y, EffectFlip, Autoplay]}
                                 autoplay={{ delay: 2500 }}

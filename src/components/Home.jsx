@@ -36,7 +36,7 @@ const Home = ( {restBase, featuredImage} ) => {
                 <div className="m-[18rem] lg:m-[10rem] block">
 
                 </div>
-                <section id="works" className="lg:h-[180vh] block">
+                <section id="works" className="block">
                 <Works restBase={restBase} featuredImage={featuredImage}/>
                 </section>
             </article>
