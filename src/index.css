@@ -126,6 +126,18 @@ svg {
 	text-align: center;
 	margin-bottom: 2.5rem;
 }
+
+.accordion-button {
+	font-size: 1.5rem;
+	color: #492C0E;
+}
+.accordion-button:not(.collapsed) {
+	background-color: #94B98E;
+}
+.accordion-button:focus {
+	box-shadow: #093c02;
+}
+
   
 /*--------------------------------------------------------------
 # Normalize

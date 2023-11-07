@@ -40,7 +40,7 @@ function App() {
   return (
     <Router basename="/">
       <ScrollToTop />
-      <div className="z-9999">
+      <div className="mt-20 z-9999">
         <Header />
       </div>
       <main id="main" className="w-11/12 lg:w-4/5 m-auto h-full lg:pt-1 mt-[70px] top-[70px]">
