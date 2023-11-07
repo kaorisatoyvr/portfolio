@@ -88,10 +88,8 @@ svg {
 .box2 {
 	width: fit-content;
     background: white;
-    /* color: #FFF; */
 	border-radius: 5px;
 	box-shadow: 0 3px 6px #d4d4d4;
-	/* margin: 0 auto; */
 }
 .box-3 {
 	width: fit-content;
@@ -118,7 +116,7 @@ svg {
 	background-color: white;
 }
 
-/* Hamburger menu */
+/* Hamburger menu on MenuMobile.jsx*/
 .circle {
 	background-color: #94B98E;
 	border-radius: 100%;
@@ -126,6 +124,8 @@ svg {
 	text-align: center;
 	margin-bottom: 2.5rem;
 }
+
+/* Accordion on Work.jsx */
 
 .accordion-button {
 	font-size: 1.5rem;
@@ -136,6 +136,12 @@ svg {
 }
 .accordion-button:focus {
 	box-shadow: #093c02;
+}
+
+@media only screen and (max-width: 1024px) {
+	.accordion-button {
+		font-size: 1rem;
+	}
 }
 
   
@@ -151,6 +157,7 @@ html {
 body {
 	color: #492C0E;
 	margin: 0;
+	background-color: #F6F4F7;
 }
 
 article,
@@ -377,7 +384,7 @@ h5,
 h6 {
 	font-family: 'Maitree', sans-serif;
 	clear: both;
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 }
 
 .site-header {

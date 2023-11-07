@@ -35,35 +35,36 @@ const Work = ( { restBase, featuredImage } ) => {
             <article id={`kaori-work-${restData.id}`}>
                 <h1>{restData?.title?.rendered}</h1>
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData?.content?.rendered}}></div>
-                <div className="w-3/4 my-0 mx-auto lg:flex items-center">
+                <div className="lg:flex items-center">
                     {restData.featured_media !== 0 && 
-                        <div className="box2">
+                        <div className="box2 my-0 mx-auto">
                             <Link className="text-center" to={`/works/${slug}`}>
                             <figure dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}/>
                             </Link>
                         </div>
                     }
-                    {/* live site and github link buttons */}
-                    <div className="my-5 mx-auto">
-                        <div className="btn-yellow">
-                        <Link to={restData?.acf?.live_site}>{restData?.acf?.live_site_title}<span> </span><FontAwesomeIcon icon={faAngleRight} /></Link>
+                    <div className="flex flex-col items-center">
+                        {/* live site and github link buttons */}
+                        <div className="my-1 mx-auto">
+                            <div className="btn-yellow">
+                            <Link to={restData?.acf?.live_site}>{restData?.acf?.live_site_title}<span> </span><FontAwesomeIcon icon={faAngleRight} /></Link>
+                            </div>
+                            <div className="btn-yellow">
+                            <Link to={restData?.acf?.github}>{restData?.acf?.github_title}<span> </span><FontAwesomeIcon icon={faAngleRight} /></Link>
+                            </div>
                         </div>
-                        <div className="btn-yellow">
-                        <Link to={restData?.acf?.github}>{restData?.acf?.github_title}<span> </span><FontAwesomeIcon icon={faAngleRight} /></Link>
+                        {/* Tool I used */}
+                        <div className="w-3/4 bg-[#fafafa] border-2 rounded-lg p-3 m-3">
+                            <h2 className="w-fit bg-[#492C0E] text-white p-2 rounded-lg mb-3">{restData?.acf?.tool_i_used_title}</h2>
+                            <p>{restData?.acf?.tool_i_used}</p>
                         </div>
                     </div>
                 </div>
-                <section>
+                <section className="my-5">
                     <h2>{restData?.acf?.overview_title}</h2>
                     <p>{restData?.acf?.overview}</p>
                 </section>
                
-                <section>
-                    <div className="w-3/4 bg-[#fafafa] rounded-lg p-3 m-3">
-                        <h2 className="w-fit bg-[#492C0E] text-white p-2 rounded-lg mb-3">{restData?.acf?.tool_i_used_title}</h2>
-                        <p>{restData?.acf?.tool_i_used}</p>
-                    </div>
-                </section>
 
                 <Accordion defaultActiveKey="0" flush>
                 <Accordion.Item eventKey="0">
@@ -97,7 +98,7 @@ const Work = ( { restBase, featuredImage } ) => {
                     {/* About me button */}
                 <div>
                     <Link to="/about">
-                        <p className="btn-yellow my-0 mx-auto">
+                        <p className="btn-yellow mt-5 mb-0 mx-auto">
                         About Me<span> </span><FontAwesomeIcon icon={faAngleRight} />
                         </p>
                     </Link>

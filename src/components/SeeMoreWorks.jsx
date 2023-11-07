@@ -34,7 +34,7 @@ const Works = ( { restBase } ) => {
                      {restData?.acf.see_more_works.map((item, index) => (
                          <div className="m-[2px] lg:m-2 box-3 p-2" key={index}>
                             <Link to={`/works/${item.work_link}`}>
-                                <p className="fit-content text-[9px] sm:text-base">{item.single_work_title}</p>
+                                <p className="fit-content text-[9px] sm:text-base mb-1">{item.single_work_title}</p>
                                 <img className="w-36 lg:m-5" src={item.work_image} alt={item.single_work_title} />
                                 <div className="text-right">
                                 <FontAwesomeIcon icon={faAngleRight} />

@@ -39,7 +39,7 @@ const Works = ( { restBase, featuredImage } ) => {
                 {/* About me button */}
                 <div>
                     <Link to="/about">
-                        <p className="btn-yellow my-0 mx-auto">
+                        <p className="btn-yellow mt-5 mb-0 mx-auto">
                         About Me <span> </span><FontAwesomeIcon icon={faAngleRight} />
                         </p>
                     </Link>
