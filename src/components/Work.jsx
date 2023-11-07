@@ -47,10 +47,10 @@ const Work = ( { restBase, featuredImage } ) => {
                         {/* live site and github link buttons */}
                         <div className="my-1 mx-auto">
                             <div className="btn-yellow">
-                            <Link to={restData?.acf?.live_site}>{restData?.acf?.live_site_title}<span> </span><FontAwesomeIcon icon={faAngleRight} /></Link>
+                            <Link to={restData?.acf?.live_site} target="_blank">{restData?.acf?.live_site_title}<span> </span><FontAwesomeIcon icon={faAngleRight} /></Link>
                             </div>
                             <div className="btn-yellow">
-                            <Link to={restData?.acf?.github}>{restData?.acf?.github_title}<span> </span><FontAwesomeIcon icon={faAngleRight} /></Link>
+                            <Link to={restData?.acf?.github} target="_blank">{restData?.acf?.github_title}<span> </span><FontAwesomeIcon icon={faAngleRight} /></Link>
                             </div>
                         </div>
                         {/* Tool I used */}
@@ -65,8 +65,8 @@ const Work = ( { restBase, featuredImage } ) => {
                     <p>{restData?.acf?.overview}</p>
                 </section>
                
-
-                <Accordion defaultActiveKey="0" flush>
+                    {/* https://react-bootstrap.netlify.app/docs/components/accordion/ */}
+                <Accordion defaultActiveKey={null} flush>
                 <Accordion.Item eventKey="0">
                     <Accordion.Header className="text-lg">{restData?.acf?.development_title}</Accordion.Header>
                     <Accordion.Body>

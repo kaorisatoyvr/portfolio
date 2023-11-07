@@ -9,9 +9,10 @@ const Contacts = ( {restBase} ) => {
     const restPath = restBase + 'pages/121?_embed&acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
-
-    const [visible, setVisible] = useState(false) 
+    const [visible, setVisible] = useState(false)
+    const [visibleSocialIcons, setVisibleSocialIcons] = useState(false);
   
+    // hide on top ScrollToTop button, visible when scrolling down
     const toggleVisible = () => { 
         const scrolled = document.documentElement.scrollTop; 
         if (scrolled > 300){ 
@@ -20,16 +21,23 @@ const Contacts = ( {restBase} ) => {
         else if (scrolled <= 300){ 
         setVisible(false) 
         } 
-    }; 
-    const toggleVisible2 = () => { 
-        const scrolled = document.documentElement.scrollTop; 
-        if (scrolled > 0){ 
-        setVisible(true) 
-        }  
-        else if (scrolled >= 1000){ 
-        setVisible(false) 
-        } 
-    }; 
+    
+        const point = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight;
+        const dispHeight = window.innerHeight;
+        const hidePoint = 100;
+        if (point > docHeight - dispHeight - hidePoint) {
+            setVisibleSocialIcons(false);
+          } else {
+            setVisibleSocialIcons(true);
+          }
+
+        // if (scrolled >= 500) {
+        //     setVisibleSocialIcons(false);
+        // } else {
+        //     setVisibleSocialIcons(true);
+        // }
+    };
     
     const scrollToTop = () =>{ 
         window.scrollTo({ 
@@ -75,10 +83,13 @@ const Contacts = ( {restBase} ) => {
                 </div>
                 {/* Social Media Icons on the side*/}
                 <div className="fixed right-0 bottom-0 flex flex-col m-2 lg:m-5">
-                    <a href={`mailto:${restData.acf.email}`}><img className="w-6 m-1 lg:w-7 lg:m-2" src={email} alt={restData.acf.email} style={{ fill: '#492C0E' }}/></a>
-                    <a href={`${restData.acf.linkedin}`} target="_blank" rel="noopener noreferrer"><img className="w-6 m-1 lg:w-7 lg:m-2" src={restData?.acf?.linkedin_image} alt={restData.acf.linkedin} /></a>
-                    <a href={`${restData.acf.github}`} target="_blank" rel="noopener noreferrer"><img className="w-6 m-1 lg:w-7 lg:m-2" src={restData?.acf?.github_image} alt={restData.acf.github} /></a>
-
+                    {visibleSocialIcons && (
+                        <>
+                        <a href={`mailto:${restData.acf.email}`}><img className="w-6 m-1 lg:w-7 lg:m-2" src={email} alt={restData.acf.email} style={{ fill: '#492C0E' }}/></a>
+                        <a href={`${restData.acf.linkedin}`} target="_blank" rel="noopener noreferrer"><img className="w-6 m-1 lg:w-7 lg:m-2" src={restData?.acf?.linkedin_image} alt={restData.acf.linkedin} /></a>
+                        <a href={`${restData.acf.github}`} target="_blank" rel="noopener noreferrer"><img className="w-6 m-1 lg:w-7 lg:m-2" src={restData?.acf?.github_image} alt={restData.acf.github} /></a>
+                        </>
+                    )}
                     {/* Scroll up Button */}
                     <button className="mt-2"> 
                     <FontAwesomeIcon onClick={scrollToTop} icon={faCircleChevronUp} size="xl" style={{color: "#94B98E", display: visible ? 'inline' : 'none'}} />
