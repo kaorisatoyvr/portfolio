@@ -37,7 +37,7 @@ const Work = ( { restBase, featuredImage } ) => {
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData?.content?.rendered}}></div>
                 <div className="lg:flex items-center">
                     {restData.featured_media !== 0 && 
-                        <div className="box2 my-0 mx-auto">
+                        <div className="box4 my-0 mx-auto">
                             <Link className="text-center" to={`/works/${slug}`}>
                             <figure dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}/>
                             </Link>
@@ -55,7 +55,7 @@ const Work = ( { restBase, featuredImage } ) => {
                         </div>
                         {/* Tool I used */}
                         <div className="w-3/4 bg-[#fafafa] border-2 rounded-lg p-3 m-3">
-                            <h2 className="w-fit bg-[#492C0E] text-white p-2 rounded-lg mb-3">{restData?.acf?.tool_i_used_title}</h2>
+                            <h3 className="w-fit bg-[#492C0E] text-white p-2 rounded-lg mb-3">{restData?.acf?.tool_i_used_title}</h3>
                             <p>{restData?.acf?.tool_i_used}</p>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ const Work = ( { restBase, featuredImage } ) => {
                     <p>{restData?.acf?.overview}</p>
                 </section>
                
-                    {/* https://react-bootstrap.netlify.app/docs/components/accordion/ */}
+                {/* https://react-bootstrap.netlify.app/docs/components/accordion/ */}
                 <Accordion defaultActiveKey={null} flush>
                 <Accordion.Item eventKey="0">
                     <Accordion.Header className="text-lg">{restData?.acf?.development_title}</Accordion.Header>
@@ -99,7 +99,7 @@ const Work = ( { restBase, featuredImage } ) => {
                 <div>
                     <Link to="/about">
                         <p className="btn-yellow mt-5 mb-0 mx-auto">
-                        About Me<span> </span><FontAwesomeIcon icon={faAngleRight} />
+                        See About Me<span> </span><FontAwesomeIcon icon={faAngleRight} />
                         </p>
                     </Link>
                 </div>

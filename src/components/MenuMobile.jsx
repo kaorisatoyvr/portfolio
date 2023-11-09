@@ -55,7 +55,7 @@ function MenuMobile() {
                     </nav>
                 </div>
                 }   
-                <div className="fixed bottom-0 left-[46.5%] transform: translate(-50%, -50%); bg-[#94B98E] w-18 h-18 rounded-full border black">
+                <div className="fixed bottom-0 left-[50%] transform -translate-x-1/2 -translate-y-1/2 bg-[#94B98E] w-18 h-18 rounded-full border black">
                 <Hamburger 
                     toggled={isOpen} 
                     toggle={setOpen}

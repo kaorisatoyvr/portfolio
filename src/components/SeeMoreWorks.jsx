@@ -39,7 +39,6 @@ const Works = ( { restBase } ) => {
                                 <div className="text-right">
                                 <FontAwesomeIcon icon={faAngleRight} />
                                 </div>
-                                
                             </Link>
                        </div>
                         ))}

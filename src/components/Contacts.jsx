@@ -100,9 +100,10 @@ const Contacts = ( {restBase} ) => {
             </article>
         </>
         : 
-        <div className="mt-[10rem]">
-            <Loading />
-        </div>
+        ""
+        // <div className="mt-[10rem]">
+        //     <Loading />
+        // </div>
         }
         </>
     )

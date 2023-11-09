@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Love from './Love'
 import Toolkit from './ToolKit'
 import SeeMoreWorks from './SeeMoreWorks'
+import { motion } from "framer-motion";
 
 const About = ({ restBase, featuredImage, handleClick, active }) => {
     const restPath = restBase + 'pages/16?_embed&acf_format=standard'
@@ -36,18 +37,28 @@ const About = ({ restBase, featuredImage, handleClick, active }) => {
                                 <p>{restData.acf.about_content2}</p>
                                 <p>{restData.acf.about_content3}</p>
                             </div>
-                            <div className="w-1/3 my-0 mx-auto sm:w-1/4 sm:m-10">
-                                <figure>
-                                    <img className="z-0"
-                                        src={restData?.acf?.picture_of_me}
-                                        alt={restData?.acf?.picture_of_kaori} />
-                                </figure>
+                            <div className="w-1/4">
+                                <div className="absolute z-10 w-1/4">
+                                    <figure>
+                                        <motion.img 
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 3.8 }}
+                                        className="w-fit"
+                                            src={restData?.acf?.picture_of_me}
+                                            alt={restData?.acf?.picture_of_kaori} />
+                                    </figure>
+                                </div>
+                                
+                                <div className="absolute z-0">
+                                    <figure>
+                                        <img className="w-fit"
+                                            src={restData?.acf?.illustration_of_me}
+                                            alt={restData?.acf?.illustration_of_kaori} />
+                                    </figure>
+                                </div>
                             </div>
                         </div>
-                        {/* <h2>{restData.acf.toolkit_title}</h2>
-                        {restData.acf.toolkit.map((item, index) => (
-                            <p key={index}>{item.toolkit_item}</p>
-                        ))} */}
 
                         <Toolkit restBase={restBase} />
                         <Love restBase={restBase} />

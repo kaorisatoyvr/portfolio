@@ -59,7 +59,7 @@ a#scroll-btn:before{
 }
 a#scroll-btn:after {
 	position: absolute;
-	content: "SCROLL DOWN";
+	content: "";
 	width: 9em;
 	display: block;
 	text-align: center;
@@ -72,9 +72,14 @@ a#scroll-btn:after {
 }
 
 svg {
-	fill: #f6f4f7ea;
+	fill: red;
 }
-
+.blush {
+	width: 100px;
+	position: absolute;
+	top: 200px;
+	left: 200px;
+}
 .box1 {
 	width: fit-content;
     padding: 0 1rem 1rem 1rem;
@@ -85,8 +90,11 @@ svg {
 	box-shadow: 0 3px 6px #d4d4d4;
 	margin: 0 auto;
 }
+.box1:hover{
+	background: rgb(250,250,250);
+	background: linear-gradient(0deg, rgba(250,250,250,1) 0%, rgba(250,250,250,1) 50%, rgb(194, 161, 202) 97%, rgb(212, 170, 222) 100%);
+}
 .box2 {
-	width: fit-content;
     background: white;
 	border-radius: 5px;
 	box-shadow: 0 3px 6px #d4d4d4;
@@ -98,6 +106,17 @@ svg {
     color: #FFF;
 	border-radius: 5px;
 	box-shadow: 0 3px 6px #d4d4d4;
+	transition: 0.3s;
+}
+.box-3:hover{
+	background: rgb(163,163,163);
+	background: linear-gradient(0deg, rgba(163,163,163,1) 0%, rgba(255,255,255,1) 81%, rgba(255,255,255,1) 100%);
+}
+.box4 {
+	width: fit-content;
+    background: white;
+	border-radius: 5px;
+	box-shadow: 0 3px 6px #d4d4d4;
 }
 .btn-yellow {
 	width: fit-content;
@@ -106,6 +125,10 @@ svg {
 	border-radius: 20px;
 	background-color: #EDE795;
 	margin: 1rem auto;
+	transition: 0.3s;
+}
+.btn-yellow:hover{
+	background-color: #94B98E;
 }
 .btn-white {
 	width: fit-content;
@@ -114,6 +137,20 @@ svg {
 	text-align: center;
 	border-radius: 20px;
 	background-color: white;
+	transition: 0.3s;
+}
+.btn-white:hover{
+	background-color: #94B98E;
+}
+/* Swiper */
+.swiper {
+	z-index: 0;
+}
+.swiper-button-next, .swiper-button-prev {
+	color: #91AA65;
+}
+.swiper-pagination-bullet-active {
+	background-color: #91AA65!important;
 }
 
 /* Hamburger menu on MenuMobile.jsx*/
@@ -143,7 +180,20 @@ svg {
 		font-size: 1rem;
 	}
 }
-
+/* Toolkit */
+.button {
+	width: 7rem;
+	border-radius: 4px;
+  	background-color: #492C0E;
+  	color: rgb(250 250 250);
+	text-transform: capitalize;
+	margin: .25rem;
+	padding: 1px; 
+}
+.toolkit-container .button.active {
+  	background-color: #EDE795!important;
+  	color: #492C0E!important;
+}
   
 /*--------------------------------------------------------------
 # Normalize
@@ -377,14 +427,17 @@ textarea {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2
+ {
 	font-family: 'Maitree', sans-serif;
 	clear: both;
 	font-size: 1.5rem;
+}
+h3,
+h4,
+h5,
+h6{
+	font-size: 1.25rem;
 }
 
 .site-header {
@@ -669,8 +722,6 @@ main {
 .site-navigation ul {
 	list-style: none;
 	margin: 0;
-	/* padding: 0 1.25rem 1rem; */
-	text-align: left;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
@@ -679,9 +730,12 @@ main {
 .mobile-nav ul {
 	list-style: none;
 	margin: 0 auto;
+	left: 50%;
 	display: flex;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	width: 80%;
+	transform: translate(-50%, -50%);
+
 }
 
 .site-navigation a,

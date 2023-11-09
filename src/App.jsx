@@ -4,7 +4,6 @@ import Home from './components/Home'
 import About from './components/About'
 import Love from './components/Love'
 import Toolkit from './components/ToolKit'
-import FilterButtons from './components/FilterButtons'
 import WorkList from './components/WorkList'
 import Works from './components/Works'
 import Work from './components/Work'
@@ -40,10 +39,10 @@ function App() {
   return (
     <Router basename="/">
       <ScrollToTop />
-      <div className="mt-20 z-9999">
+      <div className="mt-10">
         <Header />
       </div>
-      <main id="main" className="w-11/12 lg:w-4/5 m-auto h-full lg:pt-1 mt-[70px] top-[70px]">
+      <main id="main" className="w-10/12 mt-[70px] pt-1 lg:w-4/5 m-auto h-full">
         <Routes>
           <Route path='/' element={<Home restBase={restBase} featuredImage={featuredImage} isWorkPage={isWorkPage} />} />
           <Route path='/about' element={<About restBase={restBase} />} />
@@ -53,7 +52,6 @@ function App() {
           <Route path='/seemoreworks' element={<SeeMoreWorks restBase={restBase} />} />
           <Route path='/love' element={<Love restBase={restBase} />} />
           <Route path='/toolkit' element={<Toolkit restBase={restBase} />} />
-          <Route path='/filterButtons' element={<FilterButtons restBase={restBase} />} />
           <Route path="*" element={< Error />} />
           <Route path='/menu' element={<Menu />} />
           <Route path='/menumobile' element={<MenuMobile />} />

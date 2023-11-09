@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Loading from './Loading'
 import { Navigation, Pagination, Scrollbar, A11y, EffectFlip, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
@@ -37,9 +36,6 @@ const Love = ({ restBase }) => {
                                 navigation
                                 effect="flip"
                                 pagination={{ clickable: true }}
-                                // scrollbar={{ draggable: true }}
-                                // onSlideChange={() => console.log('slide change')}
-                                // onSwiper={(swiper) => console.log(swiper)}
                             >
                                 {restData.acf.love.map((slides) => (
                                     <SwiperSlide key={slides.love_text}>
@@ -52,7 +48,7 @@ const Love = ({ restBase }) => {
                 </>
                 :
                 <div className="mt-[10rem]">
-                    <Loading />
+                    
                 </div>
             }
         </>
