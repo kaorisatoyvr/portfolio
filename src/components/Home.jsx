@@ -67,7 +67,7 @@ const Home = ( {restBase, featuredImage} ) => {
                 </motion.div>
 
                 {/* Illustration */}
-                <img className="w-48 absolute top-[40%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-0" src={illustration} alt="Illustration of Kaori" />
+                <img className="w-48 absolute top-[40%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10" src={illustration} alt="Illustration of Kaori" />
                
                 <Blush restBase={restBase} />
 
