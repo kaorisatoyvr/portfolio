@@ -50,7 +50,7 @@ const Toolkit = ({ restBase }) => {
 
                             {/* Filter buttons */}
                             <div className="flex">
-                                <div className="gap-px flex flex-wrap normal-case" style={{ marginBottom: "1rem" }}>
+                                <div className="gap-px flex flex-wrap normal-case text-[10px]" style={{ marginBottom: "1rem" }}>
                                     {restData.acf.toolkit_filters.split(' ').map((item, index) => (
                                         <div onClick={() => handleCategoryClick(item.toLowerCase())} key={index}>
                                             <button className={`button ${active === item.toLowerCase() ? "active" : ""}`}>
@@ -73,7 +73,7 @@ const Toolkit = ({ restBase }) => {
                                             animate={{ transform: "scale(1)" }}
                                             exit={{ transform: "scale(0)" }}
                                         >
-                                            <p className="border bg-[#fafafa] text-center rounded-full text-sm py-0.5 px-2 w-fit m-1">{toolkit_item}</p>
+                                            <p className="border bg-[#fafafa] text-center rounded-full text-xs py-0.5 px-2 w-fit m-1 sm:text-sm">{toolkit_item}</p>
                                         </motion.div>
                                     ))}
                                 </AnimatePresence>

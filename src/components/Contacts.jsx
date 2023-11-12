@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Loading from './Loading'
 import email from '../assets/images/email.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -31,20 +30,12 @@ const Contacts = ( {restBase} ) => {
           } else {
             setVisibleSocialIcons(true);
           }
-
-        // if (scrolled >= 500) {
-        //     setVisibleSocialIcons(false);
-        // } else {
-        //     setVisibleSocialIcons(true);
-        // }
     };
     
     const scrollToTop = () =>{ 
         window.scrollTo({ 
         top: 0,  
         behavior: 'smooth'
-        /* you can also use 'auto' behaviour 
-            in place of 'smooth' */
         }); 
     }; 
     
@@ -101,9 +92,6 @@ const Contacts = ( {restBase} ) => {
         </>
         : 
         ""
-        // <div className="mt-[10rem]">
-        //     <Loading />
-        // </div>
         }
         </>
     )

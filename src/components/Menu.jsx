@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import useMediaQuery from '../hooks/useMediaQuery';
 import { Fade as Hamburger } from 'hamburger-react'
+import { motion } from "framer-motion";
 
 
 function Menu() {
@@ -25,7 +26,12 @@ function Menu() {
             />
             {isOpen &&
                 <div>
-                <nav className="site-navigation text-brown">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                >
+                <nav className="site-navigation text-brown uppercase">
                 <ul>
                     <li><NavLink to='/' onClick={closeMobileMenu} end>Home</NavLink></li>
                     <li><NavLink to='/about' onClick={closeMobileMenu}>About</NavLink></li>
@@ -33,6 +39,7 @@ function Menu() {
                     <li><a href='#contacts' onClick={closeMobileMenu}>Contacts</a></li>
                 </ul>
                 </nav>
+                </motion.div>
             </div>
             }                  
         </div>

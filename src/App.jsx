@@ -13,6 +13,7 @@ import Error from './components/Error';
 import Menu from './components/Menu'
 import MenuMobile from './components/MenuMobile'
 import ScrollToTop from './components/ScrollToTop'
+import Blush from './components/Blush'
 
 function App() {
   
@@ -55,6 +56,7 @@ function App() {
           <Route path="*" element={< Error />} />
           <Route path='/menu' element={<Menu />} />
           <Route path='/menumobile' element={<MenuMobile />} />
+          <Route path='/blush' element={<Blush />} />
         </Routes>
       </main>
       <footer>
