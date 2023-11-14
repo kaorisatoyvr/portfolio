@@ -46,7 +46,7 @@ const Blush = () => {
         onHoverEnd={e => {}}
         drag whileTap={{opacity: 1, scale: 1.05,}}
         whileDrag={{ scale: 1.1 }}
-        animate={{ rotate: -180 }}
+        animate={{ rotate: 90 }}
         transition={{ type: "spring", duration: 1000, bounce: 0.5}}
         className="w-[60px] sm:w-[80px] md:w-[100px] absolute top-[20%] right-[30%] z-0"
         src={blush}
