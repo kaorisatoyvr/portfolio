@@ -151,6 +151,7 @@ a#scroll-btn:after {
 	border-radius: 100%;
 	width: 70px;
 	text-align: center;
+	align-items: center;
 }
 .mobile-nav a.active{
 	color: #2E407A;

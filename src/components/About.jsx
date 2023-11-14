@@ -30,7 +30,7 @@ const About = ({ restBase, featuredImage, handleClick, active }) => {
             {isLoaded ?
                 <>
                     <article className="mt-5" id={`post-${restData.id}`}>
-                        <h1>{restData.title.rendered}</h1>
+                        <h1 className="font-brightwall">{restData.title.rendered}</h1>
                         <div className="sm:relative sm:text-lg">
                             <div className="sm:w-1/4">
                                 <div className="w-24 z-10 absolute top-[6rem] right-1/4 lg:w-36 md:w-28 md:right-[3rem] sm:top-0 sm:right-[2rem]">
@@ -38,7 +38,7 @@ const About = ({ restBase, featuredImage, handleClick, active }) => {
                                         <motion.img
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            transition={{ duration: 3.8, delay: 0.5 }}
+                                            transition={{ duration: 3, delay: 0.5 }}
                                             src={restData?.acf?.picture_of_me}
                                             alt={restData?.acf?.picture_of_kaori} />
                                     </figure>

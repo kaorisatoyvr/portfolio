@@ -31,7 +31,7 @@ function Menu() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
                 >
-                <nav className="site-navigation text-brown uppercase">
+                <nav className="site-navigation text-brown uppercase text-lg">
                 <ul>
                     <li><NavLink to='/' onClick={closeMobileMenu} end>Home</NavLink></li>
                     <li><NavLink to='/about' onClick={closeMobileMenu}>About</NavLink></li>

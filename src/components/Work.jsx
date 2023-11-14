@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import Accordion from 'react-bootstrap/Accordion';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const Work = ( { restBase, featuredImage } ) => {
     const { slug } = useParams();
@@ -72,9 +74,12 @@ const Work = ( { restBase, featuredImage } ) => {
                     <Accordion.Body>
                     <p>{restData?.acf?.development}</p>
                     {restData?.acf?.code ? (  // Check if there is data
-                    <pre className="w-3/4 my-0 mx-auto">
-                        <code>{restData?.acf?.code}</code>
-                    </pre>
+                    
+                    <div className="w-3/4 my-0 mx-auto">
+                    <SyntaxHighlighter language="javascript" style={atomDark}>
+                        {restData?.acf?.code}
+                    </SyntaxHighlighter>
+                    </div>
                     ) : null}
                     </Accordion.Body>
                 </Accordion.Item>
@@ -83,7 +88,9 @@ const Work = ( { restBase, featuredImage } ) => {
                     <Accordion.Body>
                     <p>{restData?.acf?.design}</p>
                     <Link to={restData.acf.prototype_url}></Link>
-                    <p>{restData?.acf?.design_image}</p>
+                    {restData?.acf?.design_image && (
+                    <img src={restData?.acf?.design_image} alt={restData?.acf?.design_title} />
+                    )}
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="2">

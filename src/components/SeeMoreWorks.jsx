@@ -27,15 +27,15 @@ const Works = ( { restBase } ) => {
         <>
         { isLoaded ?
             <>
-                <h2 className="text-center mt-20" >{restData.acf.see_more_works_title}</h2>
-            <div className="xl:flex w-4/5 justify-center items-center mt-10 mx-auto">
+                <h2 className="text-center mt-20 font-brightwall" >{restData.acf.see_more_works_title}</h2>
+            <div className="w-4/5 xl:flex w-[88%] justify-center items-center mt-10 mx-auto">
             
                 <div className="flex my-0 mx-auto justify-center" id={`post-${restData.id}`}>
                      {restData?.acf.see_more_works.map((item, index) => (
                          <div className="m-[2px] lg:m-2 box-3 p-2" key={index}>
                             <Link to={`/works/${item.work_link}`}>
                                 <p className="fit-content text-[9px] sm:text-base mb-1">{item.single_work_title}</p>
-                                <img className="w-36 lg:m-5" src={item.work_image} alt={item.single_work_title} />
+                                <img className="w-36" src={item.work_image} alt={item.single_work_title} />
                                 <div className="text-right">
                                 <FontAwesomeIcon icon={faAngleRight} />
                                 </div>

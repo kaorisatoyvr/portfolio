@@ -64,7 +64,7 @@ const Contacts = ( {restBase} ) => {
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}}>
                 </div>
                 <div className="text-center">
-                    <h2>{restData.acf.contacts_title}</h2>
+                    <h2 className="font-brightwall">{restData.acf.contacts_title}</h2>
                     {/* Social Media Icons */}
                     <div className="flex justify-center">
                     <a href={`mailto:${restData.acf.email}`}><img className="w-8 m-3 lg:w-10 lg:m-5" src={email} alt={restData.acf.email} style={{ fill: '#492C0E' }}/></a>

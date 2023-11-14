@@ -61,7 +61,7 @@ const Home = ( {restBase, featuredImage} ) => {
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 2, delay: 1.5 }}
+                        transition={{ duration: 3, delay: 1.5 }}
                         className="relative text-center z-40" >{restData.acf.sub_title}
                     </motion.p>
                 </motion.div>
