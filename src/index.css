@@ -21,6 +21,12 @@
 .text-brown {
 	color: #492C0E;
 }
+svg {
+	fill: red;
+}
+.st0:hover {
+    fill: red;
+}
 
 /* scroll button on Home page*/
 a#scroll-btn {
@@ -80,7 +86,7 @@ a#scroll-btn:after {
     color: #FFF;
 	border-radius: 5px;
 	box-shadow: 0 3px 6px #d4d4d4;
-	margin: 0 auto;
+	margin: 2rem auto;
 }
 .box1:hover{
 	background: rgb(250,250,250);
@@ -98,11 +104,11 @@ a#scroll-btn:after {
     color: #FFF;
 	border-radius: 5px;
 	box-shadow: 0 3px 6px #d4d4d4;
-	transition: 0.3s;
+	transition: background 4s ease-out;
 }
 .box-3:hover{
-	background: rgb(163,163,163);
 	background: linear-gradient(0deg, rgba(163,163,163,1) 0%, rgba(255,255,255,1) 81%, rgba(255,255,255,1) 100%);
+
 }
 .box4 {
 	width: fit-content;
@@ -138,9 +144,25 @@ a#scroll-btn:after {
 .swiper {
 	z-index: 0;
 }
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next {
 	color: #91AA65;
+	background-image: url(./assets/images/arrow-right.svg);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center;
+	width: 50px;
 }
+.swiper-button-prev {
+	color: #91AA65;
+	background-image: url(./assets/images/arrow-left.svg);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center;
+	width: 50px;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+	display: none;
+  }
 .swiper-pagination-bullet-active {
 	background-color: #91AA65!important;
 }
@@ -634,9 +656,8 @@ table {
 # Links
 --------------------------------------------------------------*/
 a {
-	color: hsl(197, 100%, 36%);
+	color: #492C0E;	
 }
-
 a:visited {
 	color: #492C0E;
 }

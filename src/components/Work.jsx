@@ -34,10 +34,10 @@ const Work = ( { restBase, featuredImage } ) => {
         <>
         { isLoaded ?
             <>
-            <article id={`kaori-work-${restData.id}`}>
+            <article className="mt-5" id={`kaori-work-${restData.id}`}>
                 <h1>{restData?.title?.rendered}</h1>
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData?.content?.rendered}}></div>
-                <div className="lg:flex items-center">
+                <div className="w-fit my-0 mx-auto lg:flex items-center">
                     {restData.featured_media !== 0 && 
                         <div className="box4 my-0 mx-auto">
                             <Link className="text-center" to={`/works/${slug}`}>
@@ -56,7 +56,7 @@ const Work = ( { restBase, featuredImage } ) => {
                             </div>
                         </div>
                         {/* Tool I used */}
-                        <div className="w-3/4 bg-[#fafafa] border-2 rounded-lg p-3 m-3">
+                        <div className="sm:w-3/4 bg-[#fafafa] border-2 rounded-lg p-3 sm:m-3">
                             <h3 className="w-fit bg-[#492C0E] text-white p-2 rounded-lg mb-3">{restData?.acf?.tool_i_used_title}</h3>
                             <p>{restData?.acf?.tool_i_used}</p>
                         </div>
@@ -75,7 +75,8 @@ const Work = ( { restBase, featuredImage } ) => {
                     <p>{restData?.acf?.development}</p>
                     {restData?.acf?.code ? (  // Check if there is data
                     
-                    <div className="w-3/4 my-0 mx-auto">
+                    <div className="sm:w-3/4 font-sm my-0 mx-auto">
+                        {/* https://blog.logrocket.com/guide-syntax-highlighting-react/ */}
                     <SyntaxHighlighter language="javascript" style={atomDark}>
                         {restData?.acf?.code}
                     </SyntaxHighlighter>

@@ -15,7 +15,7 @@ function Menu() {
     return (
         <>
             {isDesktop ? (
-            <div className="flex justify-start flex-row-reverse rounded-full">
+            <div className={`flex justify-start flex-row-reverse ${isOpen ? 'bg-none' : 'bg-[#94b98ec2]'} w-18 h-18 rounded-full`}>
             <Hamburger 
                 toggled={isOpen} 
                 toggle={setOpen}

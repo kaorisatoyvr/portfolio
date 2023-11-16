@@ -44,7 +44,7 @@ const Toolkit = ({ restBase }) => {
             {isLoaded ? (
                 <>
 
-                    <div id={`post-${restData.id}`} className="w-11/12 my-0 mx-auto box2 p-3">
+                    <div id={`post-${restData.id}`} className="sd:w-11/12 my-0 mx-auto box2 p-3">
                         <h2>{restData.acf.toolkit_title}</h2>
                         <div className="toolkit-container">
 

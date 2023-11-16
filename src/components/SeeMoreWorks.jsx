@@ -28,7 +28,7 @@ const Works = ( { restBase } ) => {
         { isLoaded ?
             <>
                 <h2 className="text-center mt-20 font-brightwall" >{restData.acf.see_more_works_title}</h2>
-            <div className="w-4/5 xl:flex w-[88%] justify-center items-center mt-10 mx-auto">
+            <div className="xl:flex w-fit justify-center items-center mt-10 mx-auto">
             
                 <div className="flex my-0 mx-auto justify-center" id={`post-${restData.id}`}>
                      {restData?.acf.see_more_works.map((item, index) => (
@@ -48,7 +48,7 @@ const Works = ( { restBase } ) => {
                 {/* See More Works button */}
                 <div>
                         <Link to="/works">
-                            <p className="btn-yellow">
+                            <p className="btn-yellow mx-3">
                             {restData.acf.see_more_works_title}<span> </span>
                             <FontAwesomeIcon icon={faAngleRight} />
                             </p>

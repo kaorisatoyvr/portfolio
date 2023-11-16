@@ -29,7 +29,8 @@ const Home = ( {restBase, featuredImage} ) => {
         { isLoaded ?
         <>  
             <article id={`post-${restData.id}`}>
-                <section className="home__title section-1 mt-[340px] h-[40hv] lg:h-[50vh] block">
+                <section className="home__title section-1 mt-[280px] sm:mt-[340px] h-[40hv] lg:h-[50vh] block">
+                    {/* Title Kaori Sato */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -49,6 +50,7 @@ const Home = ( {restBase, featuredImage} ) => {
                     </motion.h1>
                 </motion.div>
                     
+                    {/* Sub title */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -62,12 +64,12 @@ const Home = ( {restBase, featuredImage} ) => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 3, delay: 1.5 }}
-                        className="relative text-center z-40" >{restData.acf.sub_title}
+                        className="text-xs sm:text-lg relative text-center z-40" >{restData.acf.sub_title}
                     </motion.p>
                 </motion.div>
 
                 {/* Illustration */}
-                <img className="w-48 absolute top-[40%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10" src={illustration} alt="Illustration of Kaori" />
+                <img className="fill-red-50 w-48 absolute top-[40%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10" src={illustration} alt="Illustration of Kaori" />
                
                 <Blush restBase={restBase} />
 
