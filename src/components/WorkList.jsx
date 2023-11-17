@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const WorkList = ( { restBase, featuredImage } ) => {
-    const restPath = restBase + 'kaori-work?sort=kaori-work-category&order=asc&_embed'
+    const restPath = restBase + 'kaori-work?&acf_format=standard&orderby=date&order=desc&_embed'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
     const isWorkPage = window.location.pathname.startsWith('/works');
@@ -36,6 +36,7 @@ const WorkList = ( { restBase, featuredImage } ) => {
                                 <figure dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}/>
                             </Link>
                         }
+                        <p className="text-sm text-center mb-2">{post.acf.sub_title}</p>
                     <Link to={`/works/${post.slug}`}><p className= "btn-white">{post.title.rendered}<span> </span><FontAwesomeIcon icon={faAngleRight} /></p>
                     </Link>
                     </div>

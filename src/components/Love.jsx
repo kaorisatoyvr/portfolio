@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
-import { Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay'; 
+import 'swiper/css/effect-coverflow';
+
 
 const Love = ({ restBase }) => {
     const restPath = restBase + 'pages/16?_embed&acf_format=standard'
@@ -29,27 +32,39 @@ const Love = ({ restBase }) => {
         <>
             {isLoaded ?
                 <>  
-                        <div className="w-full sm:w-3/4 md:w-1/2 lg:1/3 mt-[3rem] mb-0 mx-auto">
-                        <Swiper
-                            spaceBetween={30}
-                            effect={'fade'}
-                            navigation={true}
-                            pagination={{
-                            clickable: true,
-                            }}
-                            loop
-                            modules={[EffectFade, Navigation, Pagination, Autoplay]}
-                            className="mySwiper"
-                        >
-                            {/* <Swiper
-                                modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay]}
-                                autoplay={{ delay: 2500 }}
+                        <div className="w-full sm:w-3/4 md:w-1/2 mt-[3rem] mb-0 mx-auto">                   
+                            <Swiper
+                                modules={[Navigation, Pagination, Autoplay]}
+                                autoplay={{ delay: 1500 }}
                                 spaceBetween={50}
                                 slidesPerView={1}
                                 navigation
-                                loop
-                                effect={'fade'}
+                                loop={ true }
                                 pagination={{ clickable: true }}
+                                speed={1500}
+                            > 
+                            {/* <Swiper
+                                effect={'coverflow'}
+                                autoplay={{ delay: 1500 }}
+                                loop={ true }
+                                speed={1500}
+                                grabCursor={true}
+                                centeredSlides={true}
+                                slidesPerView={'auto'}
+                                coverflowEffect={{
+                                rotate: 50,
+                                stretch: 0,
+                                depth: 100,
+                                modifier: 1,
+                                slideShadows: true,
+                                }}
+                                pagination={true}
+                                navigation={{
+                                    nextEl: '.swiper-button-next',
+                                    prevEl: '.swiper-button-prev',
+                                  }}
+                                modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
+                                className="mySwiper"
                             > */}
                                 {restData.acf.love.map((slides) => (
                                     <SwiperSlide key={slides.love_text}>

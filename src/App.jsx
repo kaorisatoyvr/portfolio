@@ -25,7 +25,7 @@ function App() {
     let imgHeight = featuredImageObject.media_details.sizes.full.height;
     let imgURL = featuredImageObject.source_url;
     let img = `<img src="${imgURL}" 
-        class="p-3 w-[500px] my-0 mx-auto"
+        class="p-3 pb-1 w-[500px] my-0 mx-auto"
         width="${imgWidth}"
         height="${imgHeight}"
         alt="${featuredImageObject.alt_text}"
@@ -63,7 +63,7 @@ function App() {
           <section id="contacts" className="h-36 mt-10">
               <Contacts restBase={restBase} />
           </section>
-        <p className="copyright mb-20 md:mb-0"><a href="https://kaorisato.ca/" target="_blank" rel="noopener noreferrer">&#169; 2023 Kaori Sato</a>.</p>
+        <p className="copyright mb-20 md:mb-0"><a href="https://kaorisato.ca/" target="_blank" rel="noopener noreferrer">Hand Coded with <span>❤️ </span>| &#169; 2023 Kaori Sato</a>.</p>
       </footer>
     </Router>
   )

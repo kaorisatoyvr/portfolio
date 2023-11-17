@@ -41,7 +41,7 @@ const Work = ( { restBase, featuredImage } ) => {
                     {restData.featured_media !== 0 && 
                         <div className="box4 my-0 mx-auto">
                             <Link className="text-center" to={`/works/${slug}`}>
-                            <figure dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}/>
+                            <figure className="pb-3" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}/>
                             </Link>
                         </div>
                     }
@@ -58,7 +58,12 @@ const Work = ( { restBase, featuredImage } ) => {
                         {/* Tool I used */}
                         <div className="sm:w-3/4 bg-[#fafafa] border-2 rounded-lg p-3 sm:m-3">
                             <h3 className="w-fit bg-[#492C0E] text-white p-2 rounded-lg mb-3">{restData?.acf?.tool_i_used_title}</h3>
-                            <p>{restData?.acf?.tool_i_used}</p>
+                            <div className="flex flex-wrap ">
+                                {restData?.acf?.tool_i_used.split(' ').map((item, index) => (
+                                <p className="border bg-[#fafafa] text-center rounded-full text-xs py-0.5 px-2 w-fit m-1 sm:text-sm" key={index}>{item}</p>
+                                ))}
+                            </div>
+                            {/* <p>{restData?.acf?.tool_i_used}</p> */}
                         </div>
                     </div>
                 </div>
