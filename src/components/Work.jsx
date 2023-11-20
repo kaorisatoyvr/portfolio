@@ -16,6 +16,15 @@ const Work = ( { restBase, featuredImage } ) => {
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
+    const handleAccordionClick = (eventKey) => {
+        // Scroll to the top of the opened accordion section
+        const accordionItem = document.getElementById(`accordion-item-${eventKey}`);
+        if (accordionItem) {
+          accordionItem.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+    
+
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(restPath)
@@ -72,17 +81,17 @@ const Work = ( { restBase, featuredImage } ) => {
                         <p>{restData?.acf?.overview}</p>
                     </section>
                     {/* https://react-bootstrap.netlify.app/docs/components/accordion/ */}
-                    <Accordion defaultActiveKey="0" flush>
+                    <Accordion defaultActiveKey="0" onSelect={(key) => handleAccordionClick(key)}>
                         <section>
                           {/* Design */}
                             <Accordion.Item eventKey="0">
                                 <Accordion.Header>{restData?.acf?.design_title}</Accordion.Header>
                                 <Accordion.Body>
-                                <div className="m-2" dangerouslySetInnerHTML={{ __html: restData?.acf?.design }} />
+                                <div className="m-2 text-brown text-base" dangerouslySetInnerHTML={{ __html: restData?.acf?.design }} />
                                 {restData?.acf?.prototype_url ? (  // Check if there is data
-                                <a href={restData.acf.prototype_url} className="m-3 btn-yellow" target="_blank">{restData.acf.prototype_url_copy}</a>
+                                <a href={restData.acf.prototype_url} className="text-center btn-yellow" target="_blank">{restData.acf.prototype_url_copy}</a>
                                 ) : null}
-                                {restData?.acf?.design_image && (
+                                {restData?.acf?.design_image && ( // Display data if it exist
                                 <img className="w-3/4 mx-auto my-3" src={restData?.acf?.design_image} alt={restData?.acf?.design_title} />
                                 )}
                                 </Accordion.Body>
@@ -93,7 +102,7 @@ const Work = ( { restBase, featuredImage } ) => {
                             <Accordion.Item eventKey="1">
                                 <Accordion.Header className="text-lg">{restData?.acf?.development_title}</Accordion.Header>
                                 <Accordion.Body>
-                                <div dangerouslySetInnerHTML={{ __html: restData?.acf?.development }} /> 
+                                <div className="text-brown text-base" dangerouslySetInnerHTML={{ __html: restData?.acf?.development }} /> 
                                 {restData?.acf?.code ? (  // Check if there is data
                                 <div className="sm:w-3/4 font-sm my-0 mx-auto">
                                     {/* https://blog.logrocket.com/guide-syntax-highlighting-react/ */}
@@ -110,7 +119,7 @@ const Work = ( { restBase, featuredImage } ) => {
                             <Accordion.Item eventKey="2">
                                 <Accordion.Header>{restData?.acf?.reflection_title}</Accordion.Header>
                                 <Accordion.Body>
-                                <div dangerouslySetInnerHTML={{ __html: restData?.acf?.reflection }} />
+                                <div className="text-brown text-base" dangerouslySetInnerHTML={{ __html: restData?.acf?.reflection }} />
                                 </Accordion.Body>
                             </Accordion.Item>
                         </section>       

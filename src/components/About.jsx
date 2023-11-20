@@ -43,7 +43,7 @@ const About = ({ restBase }) => {
                                             alt={restData?.acf?.picture_of_kaori} />
                                     </figure>
                                 </div>
-                                <div className="opacity-60 z-0 absolute w-28 md:w-32 lg:w-40 top-[5.5rem] sm:top-[-2px] right-[23%] sm:right-[1.5rem] md:right-[2.5rem]">
+                                <div className="opacity-60 z-0 absolute w-28 md:w-32 lg:w-40 top-[5.8rem] sm:top-[-2px] right-[23%] sm:right-[1.5rem] md:right-[2.5rem]">
                                     <figure>
                                         <img
                                             src={restData?.acf?.illustration_of_me}

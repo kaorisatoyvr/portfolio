@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Loading from './Loading'
 import Works from './Works'
 import Blush from './Blush'
-import portrait from '../assets/images/portrait.gif';
+import portrait from '../assets/images/portrait-gif.gif';
 import { motion } from "framer-motion";
 
 const Home = ( {restBase, featuredImage} ) => {
