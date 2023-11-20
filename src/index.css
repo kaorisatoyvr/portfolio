@@ -21,6 +21,12 @@
 .text-brown {
 	color: #492C0E;
 }
+.text-green {
+	color: #91AA65;
+}
+.text-yellow {
+	color: #EDE795;
+}
 
 /* scroll button on Home page*/
 a#scroll-btn {

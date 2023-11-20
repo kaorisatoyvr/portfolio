@@ -63,51 +63,61 @@ const Work = ( { restBase, featuredImage } ) => {
                                 <p className="border bg-[#fafafa] text-center rounded-full text-xs py-0.5 px-2 w-fit m-1 sm:text-sm" key={index}>{item}</p>
                                 ))}
                             </div>
-                            {/* <p>{restData?.acf?.tool_i_used}</p> */}
                         </div>
                     </div>
                 </div>
-                <section className="my-5">
-                    <h2>{restData?.acf?.overview_title}</h2>
-                    <p>{restData?.acf?.overview}</p>
-                </section>
-               
-                {/* https://react-bootstrap.netlify.app/docs/components/accordion/ */}
-                <Accordion defaultActiveKey={null} flush>
-                <Accordion.Item eventKey="0">
-                    <Accordion.Header className="text-lg">{restData?.acf?.development_title}</Accordion.Header>
-                    <Accordion.Body>
-                    <p>{restData?.acf?.development}</p>
-                    {restData?.acf?.code ? (  // Check if there is data
-                    
-                    <div className="sm:w-3/4 font-sm my-0 mx-auto">
-                        {/* https://blog.logrocket.com/guide-syntax-highlighting-react/ */}
-                    <SyntaxHighlighter language="javascript" style={atomDark}>
-                        {restData?.acf?.code}
-                    </SyntaxHighlighter>
-                    </div>
-                    ) : null}
-                    </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="1">
-                    <Accordion.Header>{restData?.acf?.design_title}</Accordion.Header>
-                    <Accordion.Body>
-                    <p>{restData?.acf?.design}</p>
-                    <Link to={restData.acf.prototype_url}></Link>
-                    {restData?.acf?.design_image && (
-                    <img src={restData?.acf?.design_image} alt={restData?.acf?.design_title} />
-                    )}
-                    </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="2">
-                    <Accordion.Header>{restData?.acf?.reflection_title}</Accordion.Header>
-                    <Accordion.Body>
-                    {restData?.acf?.reflection}
-                    </Accordion.Body>
-                </Accordion.Item>
-                </Accordion>
-                            
+                <div className="lg:w-3/4 mx-auto">
+                    <section className="my-5">
+                        <h2>{restData?.acf?.overview_title}</h2>
+                        <p>{restData?.acf?.overview}</p>
+                    </section>
+                    {/* https://react-bootstrap.netlify.app/docs/components/accordion/ */}
+                    <Accordion defaultActiveKey="0" flush>
+                        <section>
+                          {/* Design */}
+                            <Accordion.Item eventKey="0">
+                                <Accordion.Header>{restData?.acf?.design_title}</Accordion.Header>
+                                <Accordion.Body>
+                                <div className="m-2" dangerouslySetInnerHTML={{ __html: restData?.acf?.design }} />
+                                {restData?.acf?.prototype_url ? (  // Check if there is data
+                                <a href={restData.acf.prototype_url} className="m-3 btn-yellow" target="_blank">{restData.acf.prototype_url_copy}</a>
+                                ) : null}
+                                {restData?.acf?.design_image && (
+                                <img className="w-3/4 mx-auto my-3" src={restData?.acf?.design_image} alt={restData?.acf?.design_title} />
+                                )}
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        </section>
+                        <section>
+                        {/* Development */}
+                            <Accordion.Item eventKey="1">
+                                <Accordion.Header className="text-lg">{restData?.acf?.development_title}</Accordion.Header>
+                                <Accordion.Body>
+                                <div dangerouslySetInnerHTML={{ __html: restData?.acf?.development }} /> 
+                                {restData?.acf?.code ? (  // Check if there is data
+                                <div className="sm:w-3/4 font-sm my-0 mx-auto">
+                                    {/* https://blog.logrocket.com/guide-syntax-highlighting-react/ */}
+                                <SyntaxHighlighter language="javascript" style={atomDark}>
+                                    {restData?.acf?.code}
+                                </SyntaxHighlighter>
+                                </div>
+                                ) : null}
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        </section>
+                        {/* Reflection */}
+                        <section>
+                            <Accordion.Item eventKey="2">
+                                <Accordion.Header>{restData?.acf?.reflection_title}</Accordion.Header>
+                                <Accordion.Body>
+                                <div dangerouslySetInnerHTML={{ __html: restData?.acf?.reflection }} />
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        </section>       
+                    </Accordion>
+                </div>
             </article>
+
                     {/* About me button */}
                 <div>
                     <Link to="/about">
@@ -116,8 +126,9 @@ const Work = ( { restBase, featuredImage } ) => {
                         </p>
                     </Link>
                 </div>
-
+            <section>
              <SeeMoreWorks restBase={restBase} featuredImage={featuredImage} />
+            </section>
 
         </>
         

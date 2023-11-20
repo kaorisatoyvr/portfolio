@@ -28,9 +28,9 @@ const Works = ( { restBase } ) => {
         <>
         { isLoaded ?
             <>
-                <h2 className="text-center mt-20 font-brightwall" >{restData.acf.see_more_works_title}</h2>
+            <h2 className="text-center mt-20 font-brightwall" >{restData.acf.see_more_works_title}</h2>
+            <article>
             <div className="xl:flex w-fit justify-center items-center mt-10 mx-auto">
-            
                 <div className="flex my-0 mx-auto justify-center" id={`post-${restData.id}`}>
                      {restData?.acf.see_more_works.map((item, index) => (
                         // Conditionally render the card based on work_link
@@ -46,22 +46,20 @@ const Works = ( { restBase } ) => {
                         </div>
                         )
                      ))}
-                    
                 </div>
-            
                 {/* See More Works button */}
                 <div className="mx-2">
-                        <Link to="/works">
-                            <p className="btn-yellow mx-auto">
-                            {restData.acf.see_more_works_title}<span> </span>
-                            <FontAwesomeIcon icon={faAngleRight} />
-                            </p>
-                        </Link>
+                    <Link to="/works">
+                        <p className="btn-yellow mx-auto">
+                        {restData.acf.see_more_works_title}<span> </span>
+                        <FontAwesomeIcon icon={faAngleRight} />
+                        </p>
+                    </Link>
                 </div>
             </div>
+            </article>
             </>
         :
-
         <div className="mt-[10rem]">
             <Loading />
         </div>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Loading from './Loading'
 import Works from './Works'
 import Blush from './Blush'
-import illustration from '../assets/images/kaori-illustration.png';
+import portrait from '../assets/images/portrait.gif';
 import { motion } from "framer-motion";
 
 const Home = ( {restBase, featuredImage} ) => {
@@ -69,9 +69,20 @@ const Home = ( {restBase, featuredImage} ) => {
                 </motion.div>
 
                 {/* Illustration */}
-                <img className="fill-red-50 w-48 absolute top-[40%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10" src={illustration} alt="Illustration of Kaori" />
-               
-                <Blush restBase={restBase} />
+                <figure>
+                <motion.img
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.6 }}
+                        transition={{ duration: 3, delay: 1.5 }}
+                        src={portrait}
+                        alt="Illustration of Kaori"
+                        className="w-36 sm:w-48 absolute top-[43%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10" >
+                    </motion.img>
+                </figure>
+
+                <section>
+                    <Blush restBase={restBase} />
+                </section>
 
                 <div className="relative absolute top-[100px] lg:top-[250px] z-30">
                 <a id="scroll-btn" href="#works"></a>

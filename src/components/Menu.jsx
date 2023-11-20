@@ -35,8 +35,8 @@ function Menu() {
                 <ul>
                     <li><NavLink to='/' onClick={closeMobileMenu} end>Home</NavLink></li>
                     <li><NavLink to='/about' onClick={closeMobileMenu}>About</NavLink></li>
-                    <li><NavLink to='/works' onClick={closeMobileMenu}>Works</NavLink></li>
-                    <li><a href='#contacts' onClick={closeMobileMenu}>Contacts</a></li>
+                    <li><NavLink to='/works' onClick={closeMobileMenu}>Work</NavLink></li>
+                    <li><a href='#contacts' onClick={closeMobileMenu}>Contact</a></li>
                 </ul>
                 </nav>
                 </motion.div>

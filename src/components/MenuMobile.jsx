@@ -47,13 +47,13 @@ function MenuMobile() {
                         <div className="circle flex flex-col">
                         <li><NavLink to='/works' onClick={closeMobileMenu}>
                              <FontAwesomeIcon icon={faLaptopCode} size="xl" />
-                            <p className="text-xs text-center uppercase m-0">Works</p>
+                            <p className="text-xs text-center uppercase m-0">Work</p>
                             </NavLink></li>
                         </div>
                         <div className="circle flex flex-col">
                             <li><a href='#contacts' onClick={closeMobileMenu}>
                             <FontAwesomeIcon icon={faEnvelope} size="xl" />
-                            <p className="text-[10px] text-center uppercase m-0">Contacts</p>
+                            <p className="text-[10px] text-center uppercase m-0">Contact</p>
                             </a></li>
                         </div>
                     </ul>

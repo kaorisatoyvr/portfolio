@@ -63,31 +63,33 @@ const Contacts = ( {restBase} ) => {
             <article id={`post-${restData.id}`}>
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}}>
                 </div>
-                <div className="text-center">
-                    <h2 className="font-brightwall">{restData.acf.contacts_title}</h2>
-                    {/* Social Media Icons */}
-                    <div className="flex justify-center">
-                    <a href={`mailto:${restData.acf.email}`}><img className="w-8 m-3 lg:w-10 lg:m-5" src={email} alt={restData.acf.email} style={{ fill: '#492C0E' }}/></a>
-                    <a href={`${restData.acf.linkedin}`} target="_blank" rel="noopener noreferrer"><img className="w-8 m-3 lg:w-10 lg:m-5" src={restData?.acf?.linkedin_image} alt={restData.acf.linkedin} /></a>
-                    <a href={`${restData.acf.github}`} target="_blank" rel="noopener noreferrer"><img className="w-8 m-3 lg:w-10 lg:m-5" src={restData?.acf?.github_image} alt={restData.acf.github} /></a>
+                <section>
+                    <div className="text-center">
+                        <h2 className="font-brightwall">{restData.acf.contacts_title}</h2>
+                        {/* Social Media Icons */}
+                        <div className="flex justify-center">
+                        <a href={`mailto:${restData.acf.email}`}><img className="w-8 m-3 lg:w-10 lg:m-5" src={email} alt={restData.acf.email} style={{ fill: '#492C0E' }}/></a>
+                        <a href={`${restData.acf.linkedin}`} target="_blank" rel="noopener noreferrer"><img className="w-8 m-3 lg:w-10 lg:m-5" src={restData?.acf?.linkedin_image} alt={restData.acf.linkedin} /></a>
+                        <a href={`${restData.acf.github}`} target="_blank" rel="noopener noreferrer"><img className="w-8 m-3 lg:w-10 lg:m-5" src={restData?.acf?.github_image} alt={restData.acf.github} /></a>
+                        </div>
                     </div>
-                </div>
+                </section>
+                <section>
                 {/* Social Media Icons on the side*/}
-                <div className="fixed right-0 bottom-0 flex flex-col items-center lg:m-5">
-                    {visibleSocialIcons && (
-                        <>
-                        <a href={`mailto:${restData.acf.email}`}><img className="w-6 m-1 lg:w-7 lg:m-2" src={email} alt={restData.acf.email} style={{ fill: '#492C0E' }}/></a>
-                        <a href={`${restData.acf.linkedin}`} target="_blank" rel="noopener noreferrer"><img className="w-6 m-1 lg:w-7 lg:m-2" src={restData?.acf?.linkedin_image} alt={restData.acf.linkedin} /></a>
-                        <a href={`${restData.acf.github}`} target="_blank" rel="noopener noreferrer"><img className="w-6 m-1 mb-3 lg:w-7 lg:m-2" src={restData?.acf?.github_image} alt={restData.acf.github} /></a>
-                        </>
-                    )}
-                    {/* Scroll up Button */}
-                    <button className="m-2"> 
-                    <FontAwesomeIcon onClick={scrollToTop} icon={faCircleChevronUp} size="xl" style={{color: "#94B98E", display: visible ? 'inline' : 'none', fontSize: "2rem"}} />
-                   
-                    </button> 
-                </div>
-                     
+                    <div className="fixed right-0 bottom-0 flex flex-col items-center lg:m-5">
+                        {visibleSocialIcons && (
+                            <>
+                            <a href={`mailto:${restData.acf.email}`}><img className="w-6 m-1 lg:w-7 lg:m-2" src={email} alt={restData.acf.email} style={{ fill: '#492C0E' }}/></a>
+                            <a href={`${restData.acf.linkedin}`} target="_blank" rel="noopener noreferrer"><img className="w-6 m-1 lg:w-7 lg:m-2" src={restData?.acf?.linkedin_image} alt={restData.acf.linkedin} /></a>
+                            <a href={`${restData.acf.github}`} target="_blank" rel="noopener noreferrer"><img className="w-6 m-1 mb-3 lg:w-7 lg:m-2" src={restData?.acf?.github_image} alt={restData.acf.github} /></a>
+                            </>
+                        )}
+                        {/* Scroll up Button */}
+                        <button className="m-2"> 
+                        <FontAwesomeIcon onClick={scrollToTop} icon={faCircleChevronUp} size="xl" style={{color: "#94B98E", display: visible ? 'inline' : 'none', fontSize: "2rem"}} />
+                        </button> 
+                    </div>
+                </section>
             </article>
         </>
         : 
