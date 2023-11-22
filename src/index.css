@@ -27,6 +27,17 @@
 .text-yellow {
 	color: #EDE795;
 }
+.text-lightgreen {
+	color: #91aa659f;	
+}
+
+.summary {
+	font-size: 1.25rem!important;
+	color: #492C0E!important;
+}
+.radius {
+	border-radius: 7px!important;
+}
 
 /* scroll button on Home page*/
 a#scroll-btn {
@@ -232,7 +243,7 @@ a#scroll-btn:after {
 
 /* Accordion on Work.jsx */
 
-.accordion-button {
+.MuiAccordionSummary-root  {
 	font-size: 1.5rem;
 	color: #492C0E;
 }

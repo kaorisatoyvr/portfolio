@@ -5,38 +5,48 @@ import Loading from './Loading'
 import SeeMoreWorks from './SeeMoreWorks'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import Accordion from 'react-bootstrap/Accordion';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import Accordionmui from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import { KeyboardArrowDown } from '@mui/icons-material';
 
 const Work = ( { restBase, featuredImage } ) => {
     const { slug } = useParams();
     const restPath = restBase+ `kaori-work/?slug=${slug}&acf_format=standard&_embed`;
-    const [restData, setData] = useState([])
+    const [restData, setRestData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
-
-    const handleAccordionClick = (eventKey) => {
-        // Scroll to the top of the opened accordion section
-        const accordionItem = document.getElementById(`accordion-item-${eventKey}`);
-        if (accordionItem) {
-          accordionItem.scrollIntoView({ behavior: 'smooth' });
-        }
-      };
-    
+    const [isAccordionExpanded1, setIsAccordionExpanded1] = useState(false);
+    const [isAccordionExpanded2, setIsAccordionExpanded2] = useState(false);
+    const [isAccordionExpanded3, setIsAccordionExpanded3] = useState(false);
+    const handleChange1 = () => {
+        setIsAccordionExpanded1(!isAccordionExpanded1);
+    };
+    const handleChange2 = () => {
+        setIsAccordionExpanded2(!isAccordionExpanded2);
+    };
+    const handleChange3 = () => {
+        setIsAccordionExpanded3(!isAccordionExpanded3);
+    };
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(restPath)
             if ( response.ok ) {
                 const data = await response.json()
-                setData(data[0])
+                setRestData(data[0])
                 setLoadStatus(true)
             } else {
                 setLoadStatus(false)
             }
         }
         fetchData()
+        // Reset accordion states when navigating to a new work page
+        setIsAccordionExpanded1(false);
+        setIsAccordionExpanded2(false);
+        setIsAccordionExpanded3(false);
     }, [restPath])
     
     return (
@@ -80,50 +90,97 @@ const Work = ( { restBase, featuredImage } ) => {
                         <h2>{restData?.acf?.overview_title}</h2>
                         <p>{restData?.acf?.overview}</p>
                     </section>
-                    {/* https://react-bootstrap.netlify.app/docs/components/accordion/ */}
-                    <Accordion defaultActiveKey="0" onSelect={(key) => handleAccordionClick(key)}>
-                        <section>
-                          {/* Design */}
-                            <Accordion.Item eventKey="0">
-                                <Accordion.Header>{restData?.acf?.design_title}</Accordion.Header>
-                                <Accordion.Body>
-                                <div className="m-2 text-brown text-base" dangerouslySetInnerHTML={{ __html: restData?.acf?.design }} />
-                                {restData?.acf?.prototype_url ? (  // Check if there is data
-                                <a href={restData.acf.prototype_url} className="text-center btn-yellow" target="_blank">{restData.acf.prototype_url_copy}</a>
-                                ) : null}
-                                {restData?.acf?.design_image && ( // Display data if it exist
-                                <img className="w-3/4 mx-auto my-3" src={restData?.acf?.design_image} alt={restData?.acf?.design_title} />
-                                )}
-                                </Accordion.Body>
-                            </Accordion.Item>
-                        </section>
-                        <section>
-                        {/* Development */}
-                            <Accordion.Item eventKey="1">
-                                <Accordion.Header className="text-lg">{restData?.acf?.development_title}</Accordion.Header>
-                                <Accordion.Body>
-                                <div className="text-brown text-base" dangerouslySetInnerHTML={{ __html: restData?.acf?.development }} /> 
-                                {restData?.acf?.code ? (  // Check if there is data
-                                <div className="sm:w-3/4 font-sm my-0 mx-auto">
-                                    {/* https://blog.logrocket.com/guide-syntax-highlighting-react/ */}
-                                <SyntaxHighlighter language="javascript" style={atomDark}>
-                                    {restData?.acf?.code}
-                                </SyntaxHighlighter>
+                    {/* https://mui.com/material-ui/react-accordion/ */}
+                    <section>
+                        {/* Design */}
+                        <Accordionmui   expanded={isAccordionExpanded1} 
+                                        onChange={handleChange1}
+                                        className="radius"
+                        >
+                            <AccordionSummary
+                                expandIcon={<KeyboardArrowDown />}
+                                aria-controls="panel1a-content"
+                                id="panel1a-header"
+                                className="radius"
+                                style={{ backgroundColor: isAccordionExpanded1 ? "#94b98e85" : "#ffffff" }}
+                            >
+                                <Typography className="summary radius">{restData?.acf?.design_title}</Typography>
+                            </AccordionSummary>
+                            
+                            <AccordionDetails className="radius">
+                                <Typography className="radius">
+                                 <div>
+                                    <div className="m-2 text-brown" dangerouslySetInnerHTML={{ __html: restData?.acf?.design }} />
+                                    <div className="mx-auto">
+                                        {restData?.acf?.prototype_url ? (  // Check if there is data
+                                        <a href={restData.acf.prototype_url} className="btn-yellow text-center" target="_blank">{restData.acf.prototype_url_copy}</a>
+                                        ) : null}
+                                    </div>
+                                    {restData?.acf?.design_image && ( // Display data if it exist
+                                    <img className="w-3/4 mx-auto my-3" src={restData?.acf?.design_image} alt={restData?.acf?.design_title} />
+                                    )}
                                 </div>
-                                ) : null}
-                                </Accordion.Body>
-                            </Accordion.Item>
-                        </section>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordionmui>
+
+                        {/* Development */}
+                        <Accordionmui   expanded={isAccordionExpanded2} 
+                                        onChange={handleChange2}
+                                        className="radius"
+                        >
+                            <AccordionSummary
+                            expandIcon={<KeyboardArrowDown />}
+                            aria-controls="panel2a-content"
+                            id="panel2a-header"
+                            className="radius"
+                            style={{ backgroundColor: isAccordionExpanded2 ? "#94b98e85" : "#ffffff" }}
+                            >
+                            <Typography className="summary radius">{restData?.acf?.development_title}</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                            <Typography className="radius">
+                                <div>
+                                    <div className="text-brown" dangerouslySetInnerHTML={{ __html: restData?.acf?.development }} /> 
+                                    {restData?.acf?.code ? (  // Check if there is data
+                                    <div className="sm:w-3/4 font-sm my-0 mx-auto">
+                                        {/* https://blog.logrocket.com/guide-syntax-highlighting-react/ */}
+                                    <SyntaxHighlighter language="javascript" style={atomDark}>
+                                        {restData?.acf?.code}
+                                    </SyntaxHighlighter>
+                                    </div>
+                                    ) : null}
+                                </div>
+                            </Typography>
+                            </AccordionDetails>
+                        </Accordionmui>
+
                         {/* Reflection */}
-                        <section>
-                            <Accordion.Item eventKey="2">
-                                <Accordion.Header>{restData?.acf?.reflection_title}</Accordion.Header>
-                                <Accordion.Body>
-                                <div className="text-brown text-base" dangerouslySetInnerHTML={{ __html: restData?.acf?.reflection }} />
-                                </Accordion.Body>
-                            </Accordion.Item>
-                        </section>       
-                    </Accordion>
+                        <Accordionmui   expanded={isAccordionExpanded3} 
+                                        onChange={handleChange3}
+                                        className="radius"
+                        >
+                            <AccordionSummary
+                            expandIcon={<KeyboardArrowDown />}
+                            aria-controls="panel3a-content"
+                            id="panel3a-header"
+                            className="radius"
+                            style={{ backgroundColor: isAccordionExpanded3 ? "#94b98e85" : "#ffffff" }}
+                            >
+                            <Typography className="summary radius">{restData?.acf?.reflection_title}</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                            <div>
+                                <Typography className="radius">
+                                    <div className="text-brown" dangerouslySetInnerHTML={{ __html: restData?.acf?.reflection }} />
+                                </Typography>
+                            </div>
+                            </AccordionDetails>
+                        </Accordionmui>
+                        
+                    </section>
+
+                   
                 </div>
             </article>
 
