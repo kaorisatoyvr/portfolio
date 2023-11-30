@@ -259,6 +259,11 @@ a#scroll-btn:after {
 		font-size: 1rem;
 	}
 }
+
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root:before {
+	left: 4px!important;
+	right: 4px!important;
+}
 /* Toolkit */
 .button {
 	width: 5rem;
