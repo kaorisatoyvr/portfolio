@@ -117,7 +117,7 @@ const Work = ( { restBase, featuredImage } ) => {
                                         ) : null}
                                     </div>
                                     {restData?.acf?.design_image && ( // Display data if it exist
-                                    <img className="w-3/4 mx-auto my-3" src={restData?.acf?.design_image} alt={restData?.acf?.design_title} />
+                                    <img className="w-3/4 mx-auto my-3" src={restData?.acf?.design_image} alt={restData?.acf?.design_title} loading="lazy" />
                                     )}
                                 </div>
                                 </Typography>

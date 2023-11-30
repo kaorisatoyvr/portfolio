@@ -76,7 +76,7 @@ const Contacts = ( {restBase} ) => {
                 </section>
                 <section>
                 {/* Social Media Icons on the side*/}
-                    <div className="fixed right-0 bottom-0 flex flex-col items-center lg:m-5">
+                    <div className="fixed right-[3px] bottom-[2rem] z-50 flex flex-col items-center lg:m-5">
                         {visibleSocialIcons && (
                             <>
                             <a href={`mailto:${restData.acf.email}`}><img className="w-6 m-1 lg:w-7 lg:m-2" src={email} alt={restData.acf.email} style={{ fill: '#492C0E' }}/></a>

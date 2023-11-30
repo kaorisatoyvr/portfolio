@@ -38,7 +38,7 @@ const Works = ( { restBase } ) => {
                          <div className="m-[2px] lg:m-2 box3 p-2" key={index}>
                             <Link to={`/works/${item.work_link}`}>
                                 <p className="fit-content text-[9px] sm:text-base mb-1">{item.single_work_title}</p>
-                                <img className="w-36" src={item.work_image} alt={item.single_work_title} />
+                                <img className="w-36" src={item.work_image} alt={item.single_work_title} loading="lazy"/>
                                 <div className="text-right">
                                 <FontAwesomeIcon icon={faAngleRight} />
                                 </div>

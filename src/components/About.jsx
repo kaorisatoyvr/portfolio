@@ -38,7 +38,7 @@ const About = ({ restBase }) => {
                                         <motion.img
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            transition={{ duration: 3, delay: 1 }}
+                                            transition={{ duration: 4, delay: 1.5 }}
                                             src={restData?.acf?.picture_of_me}
                                             alt={restData?.acf?.picture_of_kaori} />
                                     </figure>

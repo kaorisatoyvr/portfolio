@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Loading from './Loading'
 import Works from './Works'
-import Blush from './Blush'
+import Brush from './Brush'
 import portrait from '../assets/images/portrait-gif.gif';
 import { motion } from "framer-motion";
 
@@ -81,7 +81,7 @@ const Home = ( {restBase, featuredImage} ) => {
                 </figure>
 
                 <section>
-                    <Blush restBase={restBase} />
+                    <Brush restBase={restBase} />
                 </section>
 
                 <div className="relative absolute top-[100px] lg:top-[250px] z-30">
