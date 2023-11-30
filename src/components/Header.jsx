@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
 import useMediaQuery from '../hooks/useMediaQuery';
 import Menu from './Menu';
 import MenuMobile from './MenuMobile';

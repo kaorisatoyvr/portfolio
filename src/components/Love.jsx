@@ -6,7 +6,6 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay'; 
-// import 'swiper/css/effect-coverflow';
 import 'swiper/css/effect-fade';
 
 
@@ -46,29 +45,6 @@ const Love = ({ restBase }) => {
                                 speed={1500}
                                 fadeEffect={{crossFade: true}}
                             > 
-                            {/* <Swiper
-                                effect={'coverflow'}
-                                autoplay={{ delay: 1500 }}
-                                loop={ true }
-                                speed={1500}
-                                grabCursor={true}
-                                centeredSlides={true}
-                                slidesPerView={'auto'}
-                                coverflowEffect={{
-                                rotate: 50,
-                                stretch: 0,
-                                depth: 100,
-                                modifier: 1,
-                                slideShadows: true,
-                                }}
-                                pagination={true}
-                                navigation={{
-                                    nextEl: '.swiper-button-next',
-                                    prevEl: '.swiper-button-prev',
-                                  }}
-                                modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
-                                className="mySwiper"
-                            > */}
                                 {restData.acf.love.map((slides) => (
                                     <SwiperSlide key={slides.love_text}>
                                         <img className="w-20 lg:w-24 my-0 mx-auto" src={slides.love_image} alt={slides.love_text} />
