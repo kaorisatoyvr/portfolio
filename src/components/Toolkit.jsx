@@ -44,7 +44,7 @@ const Toolkit = ({ restBase }) => {
         {isLoaded ? (
         <>
             <div id={`post-${restData.id}`} className="lg:w-4/5 my-0 mx-auto box2 p-3">
-                <h2>{restData.acf.toolkit_title}</h2>
+                <h2 className="text-lg sm:text-xl">{restData.acf.toolkit_title}</h2>
                 <div className="toolkit-container">
                     {/* Filter buttons */}
                     <div className="flex">

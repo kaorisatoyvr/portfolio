@@ -1,5 +1,5 @@
-import brush from '../assets/images/blush.svg';
-import brush2 from '../assets/images/blush2.svg';
+import brush from '../assets/images/brush.svg';
+import brush2 from '../assets/images/brush2.svg';
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useFollowPointer } from "./use-follow-pointer";
