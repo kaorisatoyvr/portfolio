@@ -32,7 +32,8 @@ const Love = ({ restBase }) => {
         <>
             {isLoaded ?
                 <>  
-                        <div className="w-full sm:w-3/4 md:w-1/2 mt-[3rem] mb-0 mx-auto">                   
+                            <h2 className="font-brightwall text-center mt-20 mb-10 sm:mt-5">Other Pursuits</h2>                   
+                        <div className="w-full sm:w-3/4 md:w-1/2 mt-[3rem] mb-0 mx-auto">
                             <Swiper
                                 modules={[Navigation, Pagination, Autoplay, EffectFade]}
                                 effect={'fade'}

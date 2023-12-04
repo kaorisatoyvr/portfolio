@@ -25,7 +25,7 @@ const About = ({ restBase }) => {
     }, [restPath])
 
     return (
-        <>
+        <div className="my-0 mx-auto max-w-5xl">
             {isLoaded ?
                 <>
                 <section>
@@ -80,7 +80,7 @@ const About = ({ restBase }) => {
                     <Loading />
                 </div>
             }
-        </>
+        </div>
     )
 }
 

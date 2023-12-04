@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home'
@@ -13,12 +14,17 @@ import Error from './components/Error';
 import Menu from './components/Menu'
 import MenuMobile from './components/MenuMobile'
 import ScrollToTop from './components/ScrollToTop'
-import Brush from './components/brush'
+import Brush from './components/Brush'
+import ReactGA from 'react-ga';
 
 function App() {
   
   const restBase = 'https://kaorisato.ca/portfolio/wp-json/wp/v2/'
   const isWorkPage = window.location.pathname.startsWith('/works');
+  useEffect(() => {
+    ReactGA.initialize('G-60T7V5TRY1'); // Replace with your tracking code
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   
   const featuredImage = ( featuredImageObject ) => {
     let imgWidth = featuredImageObject.media_details.sizes.full.width;
@@ -60,7 +66,7 @@ function App() {
         </Routes>
       </main>
       <footer>
-          <section id="contacts" className="h-36 mt-10">
+          <section id="contacts" className="h-36 mt-10 md:mt-5">
               <Contacts restBase={restBase} />
           </section>
 

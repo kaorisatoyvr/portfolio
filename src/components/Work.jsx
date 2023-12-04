@@ -70,9 +70,15 @@ const Work = ( { restBase, featuredImage } ) => {
                             <div className="btn-yellow">
                             <Link to={restData?.acf?.live_site} target="_blank">{restData?.acf?.live_site_title}<span> </span><FontAwesomeIcon icon={faAngleRight} /></Link>
                             </div>
+                            {restData?.acf?.github && (
                             <div className="btn-yellow">
-                            <Link to={restData?.acf?.github} target="_blank">{restData?.acf?.github_title}<span> </span><FontAwesomeIcon icon={faAngleRight} /></Link>
+                                <Link to={restData.acf.github} target="_blank">
+                                {restData.acf.github_title} <span> </span>
+                                <FontAwesomeIcon icon={faAngleRight} />
+                                </Link>
                             </div>
+                            )}
+                            
                         </div>
                         {/* Tool I used */}
                         <div className="sm:w-3/4 bg-[#fafafa] border-2 rounded-lg p-3 sm:m-3">

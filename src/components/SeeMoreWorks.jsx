@@ -28,7 +28,7 @@ const Works = ( { restBase } ) => {
         <>
         { isLoaded ?
             <>
-            <h2 className="text-center mt-20 font-brightwall" >{restData.acf.see_more_works_title}</h2>
+            <h2 className="text-center mt-20 sm:mt-10 font-brightwall" >{restData.acf.see_more_works_title}</h2>
             <article>
             <div className="xl:flex w-fit justify-center items-center mt-10 mx-auto">
                 <div className="flex my-0 mx-auto justify-center" id={`post-${restData.id}`}>

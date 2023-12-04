@@ -101,6 +101,11 @@ a#scroll-btn:after {
 	margin: 2rem auto;
 	z-index: 1;
 }
+@media only screen and (min-width: 640px) {
+	.box1{
+		margin: 0 auto;
+	}
+}
 /* special setting for gradients hover  https://keithjgrant.com/posts/2017/07/transitioning-gradients/*/
 .box1::before {
 	position: absolute;
