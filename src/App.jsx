@@ -49,7 +49,7 @@ function App() {
       <div className="mt-10">
         <Header />
       </div>
-      <main id="main" className="w-[79%] mt-[70px] pt-1 lg:w-4/5 m-auto h-full">
+      <main id="main" className="mt-[70px] pt-1 mx-auto px-4 md:px-10 md:max-w-screen-lg m-auto h-full">
         <Routes>
           <Route path='/' element={<Home restBase={restBase} featuredImage={featuredImage} isWorkPage={isWorkPage} />} />
           <Route path='/about' element={<About restBase={restBase} />} />

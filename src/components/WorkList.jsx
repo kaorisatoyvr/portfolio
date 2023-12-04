@@ -30,7 +30,7 @@ const WorkList = ( { restBase, featuredImage } ) => {
             <>
             {restData.map(post => 
                 <article className="mb-0" key={post.id} id={`post-${post.id}`}>
-                    <div className="box1 sm:mx-[2rem]">
+                    <div className="box1">
                         {post.featured_media !== 0 && 
                             <Link className="text-center" to={`/works/${post.slug}`}>
                                 <figure dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}/>

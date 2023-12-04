@@ -89,7 +89,7 @@ a#scroll-btn:after {
 }
 /* For boxes */
 .box1 {
-	width: fit-content;
+	max-width: 320px;
     padding: 0 1rem 1rem 1rem;
 	position: relative;
 	background-image: linear-gradient(
@@ -98,12 +98,23 @@ a#scroll-btn:after {
 	);
 	border-radius: 5px;
 	box-shadow: 0 3px 6px #d4d4d4;
-	margin: 2rem auto;
+	margin: 0 auto;
 	z-index: 1;
 }
-@media only screen and (min-width: 640px) {
+
+@media only screen and (min-width: 648px) {
 	.box1{
-		margin: 0 auto;
+		max-width: 380px;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.box1{
+		max-width: 400px;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.box1{
+		max-width: 450px;
 	}
 }
 /* special setting for gradients hover  https://keithjgrant.com/posts/2017/07/transitioning-gradients/*/
@@ -249,7 +260,7 @@ a#scroll-btn:after {
 /* Accordion on Work.jsx */
 
 .MuiAccordionSummary-root  {
-	font-size: 1.5rem;
+	font-size: 1rem;
 	color: #492C0E;
 }
 .accordion-button:not(.collapsed) {
@@ -259,9 +270,19 @@ a#scroll-btn:after {
 	box-shadow: #093c02;
 }
 
-@media only screen and (max-width: 1024px) {
+.css-15v22id-MuiAccordionDetails-root {
+	padding: 8px 8px!important;
+}
+
+@media only screen and (min-width: 768px) {
+	.css-15v22id-MuiAccordionDetails-root {
+		padding: 8px 16px 16px!important;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
 	.accordion-button {
-		font-size: 1rem;
+		font-size: 1.5rem;
 	}
 }
 
@@ -269,6 +290,7 @@ a#scroll-btn:after {
 	left: 4px!important;
 	right: 4px!important;
 }
+
 /* Toolkit */
 .button {
 	width: 5rem;
