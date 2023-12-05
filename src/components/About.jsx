@@ -60,7 +60,7 @@ const About = ({ restBase }) => {
                     </article>        
                  </section>
 
-                <section>
+                <section id="area-2">
                     <Toolkit restBase={restBase} />
                 </section>
 

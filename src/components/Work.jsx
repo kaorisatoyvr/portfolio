@@ -92,7 +92,7 @@ const Work = ( { restBase, featuredImage } ) => {
                     </div>
                 </div>
                 <div className="lg:w-3/4 mx-auto">
-                    <section className="my-5">
+                    <section id="area-2" className="my-5">
                         <h2>{restData?.acf?.overview_title}</h2>
                         <p>{restData?.acf?.overview}</p>
                     </section>

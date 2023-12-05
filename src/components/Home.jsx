@@ -85,13 +85,13 @@ const Home = ( {restBase, featuredImage} ) => {
                 </section>
 
                 <div className="relative absolute top-[100px] lg:top-[250px] z-30">
-                <a id="scroll-btn" href="#works"></a>
+                <a id="scroll-btn" href="#area-2"></a>
                 </div>
                 </section>
                 <div className="m-[18rem] lg:m-[10rem] block">
 
                 </div>
-                <section id="works" className="block">
+                <section id="area-2" className="block">
                 <Works restBase={restBase} featuredImage={featuredImage}/>
                 </section>
             </article>
