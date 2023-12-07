@@ -4,7 +4,12 @@ const Loading = () => {
     
     return (
         <div className="mb-96">
-            <img src={loading} alt="Loading" className="loading w-36" id="loading" />
+            <img 
+                src={loading} 
+                alt="Loading" 
+                className="loading w-36" 
+                id="loading"
+            />
         </div>
     )
 
