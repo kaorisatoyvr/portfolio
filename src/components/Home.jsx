@@ -63,7 +63,7 @@ const Home = ( {restBase, featuredImage} ) => {
         <>
         { isLoaded ?
         <>  
-        <div className="mt-[70px] h-full m-0" style={{ backgroundColor, transition: 'background-color 0.3s' }}>
+        <div className="mt-[70px] h-full m-0 p-5" style={{ backgroundColor, transition: 'background-color 0.3s' }}>
             <div className="pt-1 mx-auto md:max-w-screen-lg h-full m-auto">
                 <article id={`post-${restData.id}`}>
                     <section className="home__title section-1 mt-[280px] sm:mt-[340px] h-[40hv] lg:h-[50vh] block">
