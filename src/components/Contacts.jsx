@@ -159,7 +159,11 @@ const Contacts = ( {restBase} ) => {
                 </section>
                 <figure>
                     <a href="/">
-                    <img className="fixed left-0 bottom-0 w-10 m-1 mb-5 md:m-5 z-50" src={logo} alt="logo with letter K" />
+                        <img 
+                            className="fixed left-0 bottom-0 w-10 m-1 mb-5 md:m-5 z-50" 
+                            src={logo} 
+                            alt="logo with letter K"
+                        />
                     </a>
                 </figure>
             </article>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Loading from './Loading'
 import Love from './Love'
-import Toolkit from './ToolKit'
+import ToolKit from './ToolKit'
 import SeeMoreWorks from './SeeMoreWorks'
 import { motion } from "framer-motion";
 
@@ -30,7 +30,10 @@ const About = ({ restBase }) => {
                 <>
                 <section>
                     <article className="mt-5" id={`post-${restData.id}`}>
-                        <h1 className="font-brightwall">{restData.title.rendered}</h1>
+                        <h1 
+                            className="font-brightwall">
+                                {restData.title.rendered}
+                        </h1>
                         <div className="sm:relative sm:text-lg">
                             <div className="sm:w-1/4">
                                 <div className="w-24 md:w-28 lg:w-36 z-10 absolute top-[6rem] right-1/4 md:right-[3rem] sm:top-0 sm:right-[2rem]">
@@ -61,7 +64,7 @@ const About = ({ restBase }) => {
                  </section>
 
                 <section id="area-2">
-                    <Toolkit restBase={restBase} />
+                    <ToolKit restBase={restBase} />
                 </section>
 
                 <section>

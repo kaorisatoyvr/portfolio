@@ -32,12 +32,29 @@ const WorkList = ( { restBase, featuredImage } ) => {
                 <article className="mb-0" key={post.id} id={`post-${post.id}`}>
                     <div className="box1">
                         {post.featured_media !== 0 && 
-                            <Link className="text-center" to={`/works/${post.slug}`}>
-                                <figure dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}/>
+                            <Link 
+                                className="text-center" 
+                                to={`/works/${post.slug}`}
+                            >
+                                <figure 
+                                    dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}
+                                />
                             </Link>
                         }
-                        <p className="text-sm text-center mb-2">{post.acf.sub_title}</p>
-                    <Link to={`/works/${post.slug}`}><p className= "btn-white">{post.title.rendered}<span> </span><FontAwesomeIcon icon={faAngleRight} /></p>
+                        <p 
+                            className="text-sm text-center mb-2">
+                            {post.acf.sub_title}
+                        </p>
+                    <Link 
+                        to={`/works/${post.slug}`}
+                    >
+                        <p 
+                            className= "btn-white">
+                            {post.title.rendered}
+                            <span> </span>
+                            <FontAwesomeIcon 
+                            icon={faAngleRight}/>
+                        </p>
                     </Link>
                     </div>
                 </article>

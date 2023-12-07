@@ -59,8 +59,14 @@ const Work = ( { restBase, featuredImage } ) => {
                 <div className="w-fit my-0 mx-auto lg:flex items-center">
                     {restData.featured_media !== 0 && 
                         <div className="box4 my-0 mx-auto">
-                            <Link className="text-center" to={`/works/${slug}`}>
-                            <figure className="pb-3" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}/>
+                            <Link 
+                                className="text-center" 
+                                to={`/works/${slug}`}
+                            >
+                                <figure 
+                                    className="pb-3" 
+                                    dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}
+                                />
                             </Link>
                         </div>
                     }
@@ -68,13 +74,24 @@ const Work = ( { restBase, featuredImage } ) => {
                         {/* live site and github link buttons */}
                         <div className="my-1 mx-auto">
                             <div className="btn-yellow">
-                            <Link to={restData?.acf?.live_site} target="_blank">{restData?.acf?.live_site_title}<span> </span><FontAwesomeIcon icon={faAngleRight} /></Link>
+                            <Link 
+                                to={restData?.acf?.live_site} 
+                                target="_blank">{restData?.acf?.live_site_title}
+                                <span> </span>
+                                <FontAwesomeIcon 
+                                icon={faAngleRight}
+                            />
+                             </Link>
                             </div>
                             {restData?.acf?.github && (
                             <div className="btn-yellow">
-                                <Link to={restData.acf.github} target="_blank">
-                                {restData.acf.github_title} <span> </span>
-                                <FontAwesomeIcon icon={faAngleRight} />
+                                <Link 
+                                    to={restData.acf.github} 
+                                    target="_blank"
+                                >
+                                    {restData.acf.github_title}
+                                     <span> </span>
+                                    <FontAwesomeIcon icon={faAngleRight} />
                                 </Link>
                             </div>
                             )}
@@ -82,10 +99,17 @@ const Work = ( { restBase, featuredImage } ) => {
                         </div>
                         {/* Tool I used */}
                         <div className="sm:w-3/4 bg-[#fafafa] border-2 rounded-lg p-3 sm:m-3">
-                            <h3 className="w-fit bg-[#492C0E] text-base text-white p-1 rounded-lg mb-3">{restData?.acf?.tool_i_used_title}</h3>
+                            <h3 
+                                className="w-fit bg-[#492C0E] text-base text-white p-1 rounded-lg mb-3">
+                                    {restData?.acf?.tool_i_used_title}
+                            </h3>
                             <div className="flex flex-wrap ">
                                 {restData?.acf?.tool_i_used.split(' ').map((item, index) => (
-                                <p className="border bg-[#fafafa] text-center rounded-full text-xs py-0.5 px-2 w-fit m-1 sm:text-sm" key={index}>{item}</p>
+                                <p 
+                                    className="border bg-[#fafafa] text-center rounded-full text-xs py-0.5 px-2 w-fit m-1 sm:text-sm" 
+                                    key={index}>
+                                    {item}
+                                </p>
                                 ))}
                             </div>
                         </div>
@@ -119,11 +143,21 @@ const Work = ( { restBase, featuredImage } ) => {
                                     <div className="m-2 text-brown" dangerouslySetInnerHTML={{ __html: restData?.acf?.design }} />
                                     <div className="mx-auto">
                                         {restData?.acf?.prototype_url ? (  // Check if there is data
-                                        <a href={restData.acf.prototype_url} className="btn-yellow text-center" target="_blank">{restData.acf.prototype_url_copy}</a>
+                                        <a 
+                                            href={restData.acf.prototype_url} 
+                                            className="btn-yellow text-center" 
+                                            target="_blank"
+                                        >
+                                            {restData.acf.prototype_url_copy}
+                                        </a>
                                         ) : null}
                                     </div>
                                     {restData?.acf?.design_image && ( // Display data if it exist
-                                    <img className="w-3/4 mx-auto my-3" src={restData?.acf?.design_image} alt={restData?.acf?.design_title} loading="lazy" />
+                                    <img 
+                                        className="w-3/4 mx-auto my-3" 
+                                        src={restData?.acf?.design_image} 
+                                        alt={restData?.acf?.design_title} 
+                                        loading="lazy" />
                                     )}
                                 </div>
                                 </Typography>
@@ -136,11 +170,11 @@ const Work = ( { restBase, featuredImage } ) => {
                                         className="radius"
                         >
                             <AccordionSummary
-                            expandIcon={<KeyboardArrowDown />}
-                            aria-controls="panel2a-content"
-                            id="panel2a-header"
-                            className="radius"
-                            style={{ backgroundColor: isAccordionExpanded2 ? "#94b98e85" : "#ffffff" }}
+                                expandIcon={<KeyboardArrowDown />}
+                                aria-controls="panel2a-content"
+                                id="panel2a-header"
+                                className="radius"
+                                style={{ backgroundColor: isAccordionExpanded2 ? "#94b98e85" : "#ffffff" }}
                             >
                             <Typography className="summary radius">{restData?.acf?.development_title}</Typography>
                             </AccordionSummary>
@@ -151,7 +185,9 @@ const Work = ( { restBase, featuredImage } ) => {
                                     {restData?.acf?.code ? (  // Check if there is data
                                     <div className="sm:w-3/4 font-sm my-0 mx-auto">
                                         {/* https://blog.logrocket.com/guide-syntax-highlighting-react/ */}
-                                    <SyntaxHighlighter language="javascript" style={atomDark}>
+                                    <SyntaxHighlighter 
+                                        language="javascript" 
+                                        style={atomDark}>
                                         {restData?.acf?.code}
                                     </SyntaxHighlighter>
                                     </div>
@@ -167,11 +203,11 @@ const Work = ( { restBase, featuredImage } ) => {
                                         className="radius"
                         >
                             <AccordionSummary
-                            expandIcon={<KeyboardArrowDown />}
-                            aria-controls="panel3a-content"
-                            id="panel3a-header"
-                            className="radius"
-                            style={{ backgroundColor: isAccordionExpanded3 ? "#94b98e85" : "#ffffff" }}
+                                expandIcon={<KeyboardArrowDown />}
+                                aria-controls="panel3a-content"
+                                id="panel3a-header"
+                                className="radius"
+                                style={{ backgroundColor: isAccordionExpanded3 ? "#94b98e85" : "#ffffff" }}
                             >
                             <Typography className="summary radius">{restData?.acf?.reflection_title}</Typography>
                             </AccordionSummary>
@@ -193,8 +229,12 @@ const Work = ( { restBase, featuredImage } ) => {
                     {/* About me button */}
                 <div>
                     <Link to="/about">
-                        <p className="btn-yellow mt-5 mb-0 mx-auto">
-                        See About Me<span> </span><FontAwesomeIcon icon={faAngleRight} />
+                        <p 
+                            className="btn-yellow mt-5 mb-0 mx-auto">
+                            See About Me
+                            <span> </span>
+                            <FontAwesomeIcon 
+                            icon={faAngleRight} />
                         </p>
                     </Link>
                 </div>

@@ -30,17 +30,27 @@ const Works = ( { restBase, featuredImage } ) => {
         { isLoaded ?
             <>
             <article id={`post-${restData.id}`}>
-                <h1 className="text-center font-brightwall my-5 lg:my-10">{restData.title.rendered}</h1>
+                <h1 
+                    className="text-center font-brightwall my-5 lg:my-10">
+                    {restData.title.rendered}
+                </h1>
                 <div className="flex flex-wrap justify-center gap-2 md:gap-5">
-                <WorkList restBase={restBase} featuredImage={featuredImage}/>
+                    <WorkList 
+                        restBase={restBase} 
+                        featuredImage={featuredImage}
+                    />
                 </div>
              </article>
 
                 {/* About me button */}
                 <div>
                     <Link to="/about">
-                        <p className="btn-yellow mt-5 mb-0 mx-auto">
-                        See About Me <span> </span><FontAwesomeIcon icon={faAngleRight} />
+                        <p 
+                            className="btn-yellow mt-5 mb-0 mx-auto">
+                            See About Me 
+                            <span> </span>
+                            <FontAwesomeIcon 
+                            icon={faAngleRight} />
                         </p>
                     </Link>
                 </div>

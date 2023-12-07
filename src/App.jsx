@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Home from './components/Home'
 import About from './components/About'
 import Love from './components/Love'
-import Toolkit from './components/ToolKit'
+import ToolKit from './components/ToolKit'
 import WorkList from './components/WorkList'
 import Works from './components/Works'
 import Work from './components/Work'
@@ -58,7 +58,7 @@ function App() {
           <Route path='/works/:slug' element={<Work restBase={restBase} featuredImage={featuredImage} />} />
           <Route path='/seemoreworks' element={<SeeMoreWorks restBase={restBase} />} />
           <Route path='/love' element={<Love restBase={restBase} />} />
-          <Route path='/toolkit' element={<Toolkit restBase={restBase} />} />
+          <Route path='/toolkit' element={<ToolKit restBase={restBase} />} />
           <Route path="*" element={< Error />} />
           <Route path='/menu' element={<Menu />} />
           <Route path='/menumobile' element={<MenuMobile />} />

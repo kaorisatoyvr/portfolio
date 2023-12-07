@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from "framer-motion";
 
-const Toolkit = ({ restBase }) => {
+const ToolKit = ({ restBase }) => {
     const restPath = restBase + 'pages/16?&acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
@@ -48,10 +48,17 @@ const Toolkit = ({ restBase }) => {
                 <div className="toolkit-container">
                     {/* Filter buttons */}
                     <div className="flex">
-                        <div className="gap-px flex flex-wrap normal-case text-[10px]" style={{ marginBottom: "1rem" }}>
+                        <div 
+                            className="gap-px flex flex-wrap normal-case text-[10px]" 
+                            style={{ marginBottom: "1rem" }}
+                        >
                             {restData.acf.toolkit_filters.split(' ').map((item, index) => (
-                                <div onClick={() => handleCategoryClick(item.toLowerCase())} key={index}>
-                                    <button className={`button ${active === item.toLowerCase() ? "active" : ""}`}>
+                                <div 
+                                    onClick={() => handleCategoryClick(item.toLowerCase())} 
+                                    key={index}
+                                >
+                                    <button 
+                                        className={`button ${active === item.toLowerCase() ? "active" : ""}`}>
                                         {item}
                                     </button>
                                 </div>
@@ -85,4 +92,4 @@ const Toolkit = ({ restBase }) => {
     );
 }
 
-export default Toolkit;
+export default ToolKit;

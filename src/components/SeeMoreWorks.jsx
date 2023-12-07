@@ -37,10 +37,18 @@ const Works = ( { restBase } ) => {
                         location.pathname !== `/works/${item.work_link}` && (
                          <div className="m-[2px] lg:m-2 box3 p-2" key={index}>
                             <Link to={`/works/${item.work_link}`}>
-                                <p className="fit-content text-[9px] sm:text-base mb-1">{item.single_work_title}</p>
-                                <img className="w-36" src={item.work_image} alt={item.single_work_title} loading="lazy"/>
+                                <p 
+                                    className="fit-content text-[9px] sm:text-base mb-1">
+                                    {item.single_work_title}
+                                </p>
+                                <img 
+                                    className="w-36" 
+                                    src={item.work_image} 
+                                    alt={item.single_work_title} 
+                                    loading="lazy"
+                                />
                                 <div className="text-right">
-                                <FontAwesomeIcon icon={faAngleRight} />
+                                    <FontAwesomeIcon icon={faAngleRight} />
                                 </div>
                             </Link>
                         </div>
@@ -50,9 +58,12 @@ const Works = ( { restBase } ) => {
                 {/* See More Works button */}
                 <div className="mx-2">
                     <Link to="/works">
-                        <p className="btn-yellow mx-auto">
-                        {restData.acf.see_more_works_title}<span> </span>
-                        <FontAwesomeIcon icon={faAngleRight} />
+                        <p 
+                            className="btn-yellow mx-auto">
+                            {restData.acf.see_more_works_title}
+                            <span> </span>
+                            <FontAwesomeIcon 
+                            icon={faAngleRight} />
                         </p>
                     </Link>
                 </div>
