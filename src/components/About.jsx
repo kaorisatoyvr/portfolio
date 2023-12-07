@@ -25,7 +25,7 @@ const About = ({ restBase }) => {
     }, [restPath])
 
     return (
-        <div className="my-0 mx-auto max-w-5xl">
+        <div className="mt-[70px] pt-1 px-5 my-0 mx-auto max-w-5xl md:px-10 md:max-w-screen-lg h-full">
             {isLoaded ?
                 <>
                 <section>

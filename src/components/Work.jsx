@@ -51,6 +51,7 @@ const Work = ( { restBase, featuredImage } ) => {
     
     return (
         <>
+        <div className="mt-[70px] pt-1 mx-auto  md:px-10 md:max-w-screen-lg m-auto h-full">
         { isLoaded ?
             <>
             <article className="mt-5" id={`kaori-work-${restData.id}`}>
@@ -249,6 +250,7 @@ const Work = ( { restBase, featuredImage } ) => {
         <Loading />
     </div>
     }
+    </div>
     </>   
     )
 }
