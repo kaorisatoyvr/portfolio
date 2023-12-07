@@ -76,7 +76,7 @@ const Home = ( {restBase, featuredImage} ) => {
                         transition={{ duration: 3, delay: 1.5 }}
                         src={portrait}
                         alt="Illustration of Kaori"
-                        className="w-36 sm:w-48 absolute top-[43%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10" >
+                        className="w-36 sm:w-48 absolute top-[43%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-30" >
                     </motion.img>
                 </figure>
 

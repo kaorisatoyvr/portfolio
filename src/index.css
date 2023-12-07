@@ -404,7 +404,188 @@ _:-ms-lang(x), .js-scroll a::before{
 	right:0;
   }
   
+  /* Brush scroll animation */
+.brush_1.is-animated {
+	animation: fall 15s linear forwards infinite, sway2 4s ease-in-out alternate infinite;
+	animation-delay: 0.5s;
+}
+.brush_2.is-animated {
+	animation: fall 7s linear forwards infinite, sway1 5s ease-in-out alternate infinite;
+	animation-delay: 1s;
+}
+.brush_3.is-animated {
+	animation: fall 9s linear forwards infinite, sway1 3s ease-in-out alternate infinite;
+	animation-delay: 1.5s;
+}
+.brush_4.is-animated {
+	animation: fall 12s linear forwards infinite, sway1 4s ease-in-out alternate infinite;
+	animation-delay: 2s;
+}
+.brush_5.is-animated {
+	animation: fall 7s linear forwards infinite, sway1 5s ease-in-out alternate infinite;
+	animation-delay: 2.5s;
+}
+.brush_6.is-animated {
+	animation: fall 15s linear forwards infinite, sway1 3s ease-in-out alternate infinite;
+	animation-delay: 3s;
+}
+.brush_7.is-animated {
+	animation: fall 9s linear forwards infinite, sway1 4s ease-in-out alternate infinite;
+	animation-delay: 3.5s;
+}
+
+.brush1 {
+	position: absolute;
+	left: 10%;
+	transform: translate(-50%, 0);
+	width: 50px;
+	margin: 0 auto;
+	z-index: 0;
+	opacity: 0;
+}
+@media only screen and (min-width: 1024px) {
+	.brush1 {
+		width: 350px;
+	}
+}
+.brush1.is-animated {
+	animation: fall 12s linear forwards infinite, sway1 4s ease-in-out alternate infinite;
+	animation-delay: 3s;
+}
+
+.brush2 {
+	position: absolute;
+	left: 80%;
+	transform: translate(-90%, 0);
+	width: 100px;
+	margin: 0 auto;
+	z-index: 0;
+	opacity: 0;
+}
+.brush2.is-animated {
+	animation: fall 9s linear forwards infinite, sway1 7s ease-in-out alternate infinite;
+	animation-delay: 4.5s;
+}
+
+.brush3 {
+	position: absolute;
+	left: 50%;
+	transform: translate(-30%, 0);
+	width: 200px;
+	margin: 0 auto;
+	z-index: 0;
+	opacity: 0;
+}
+.brush3.is-animated {
+	animation: fall 10s linear forwards infinite, sway2 6s ease-in-out alternate infinite;
+	animation-delay: 5s;
+}
+
+.brush4 {
+	position: absolute;
+	left: 20%;
+	transform: translate(-70%, 0);
+	width: 150px;
+	margin: 0 auto;
+	z-index: 0;
+	opacity: 0;
+}
+.brush4.is-animated {
+	animation: fall 8s linear forwards infinite, sway1 6s ease-in-out alternate infinite;
+	animation-delay: 5.5s;
+}
+
+.brush5 {
+	position: absolute;
+	left: 70%;
+	transform: translate(-30%, 0);
+	width: 150px;
+	margin: 0 auto;
+	z-index: 0;
+	opacity: 0;
+}
+.brush5.is-animated {
+	animation: fall 7s linear forwards infinite, sway1 5s ease-in-out alternate infinite;
+	animation-delay: 6s;
+}
+
+.brush6 {
+	position: absolute;
+	left: 30%;
+	transform: translate(-50%, 0);
+	width: 100px;
+	margin: 0 auto;
+	z-index: 0;
+	opacity: 0;
+}
+.brush6.is-animated {
+	animation: fall 9s linear forwards infinite, sway1 6s ease-in-out alternate infinite;
+	animation-delay: 6.5s;
+}
+
+.brush7 {
+	position: absolute;
+	left: 60%;
+	transform: translate(-70%, 0);
+	width: 70px;
+	margin: 0 auto;
+	z-index: 0;
+	opacity: 0;
+}
+@media only screen and (min-width: 1024px) {
+	.brush7 {
+		width: 300px;
+	}
+}
+.brush7.is-animated {
+	animation: fall 8s linear forwards infinite, sway1 7s ease-in-out alternate infinite;
+	animation-delay: 7s;
+}
+
+@keyframes fall {
+	from {
+	  opacity: 0;
+	  top: -50px;
+	}
+	20% {
+	  opacity: 1;
+	}
+	to {
+	  opacity: 1;
+	  top: 215vh;
+	}
+  }
   
+  @keyframes sway1 {
+	from {
+	  transform: translate3d(0px, 0px, 0px) rotate(0deg);
+	}
+	25% {
+	  transform: translate3d(-90px, 0px, 0px) rotate(-10deg);
+	}
+	75% {
+	  transform: translate3d(90px, 0px, 0px) rotate(10deg);
+	}
+	to {
+	  transform: translate3d(0px, 0px, 0px) rotate(0deg);
+	}
+  }
+
+  @keyframes sway2 {
+	from {
+	  transform: translate3d(0px, 0px, 0px) rotate(0deg);
+	}
+	25% {
+	  transform: translate3d(-90px, 0px, 0px) rotate(-30deg);
+	}
+	75% {
+	  transform: translate3d(90px, 0px, 0px) rotate(30deg);
+	}
+	to {
+	  transform: translate3d(0px, 0px, 0px) rotate(0deg);
+	}
+  }
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import email from '../assets/images/email.svg'
+import logo from '../assets/images/portfolio_logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronUp } from '@fortawesome/free-solid-svg-icons';
 
@@ -94,12 +95,17 @@ const Contacts = ( {restBase} ) => {
                     {/* Scroll up Button */}
                     <div className="fixed right-[1rem] bottom-[5rem] md:bottom-[2rem] z-50">
                     <p className="js-scroll scroll-top scroll-view"><a onClick={scrollDown} style={{color: "#492C0E", display: visible ? 'none' : 'inline', transition: "all 0.2s ease-in-out"}} href="#area-2">Scroll</a></p>
-                    <p className="js-pagetop scroll-top"><a onClick={scrollToTop} style={{color: "#492C0E", transition: "all 0.2s ease-in-out", display: visible ? 'inline' : 'none'}} href="#">Page Top</a></p>
+                    <p className="js-pagetop scroll-top"><a onClick={scrollToTop} style={{color: "#492C0E", transition: "all 0.2s ease-in-out", display: visible ? 'inline' : 'none'}} href="#">To Top</a></p>
                         {/* <button>
                         <FontAwesomeIcon onClick={scrollToTop} icon={faCircleChevronUp} size="xl" style={{color: "#94B98E", display: visible ? 'inline' : 'none', fontSize: "2rem"}} />
                         </button>  */}
                     </div>
                 </section>
+                <figure>
+                    <a href="/">
+                    <img className="fixed left-0 bottom-0 w-10 m-1 mb-5 md:m-5 z-50" src={logo} alt="logo with letter K" />
+                    </a>
+                </figure>
             </article>
         </>
         : 
