@@ -77,7 +77,7 @@ const Contacts = ( {restBase} ) => {
                         <a 
                             href={`mailto:${restData.acf.email}`}>
                                 <img 
-                                    className="w-8 m-3 lg:w-10 lg:m-5 transition ease-in duration-150 transform hover:scale-125" 
+                                    className="w-8 m-3 lg:w-10 lg:m-5 transition ease-in duration-300 transform hover:scale-125" 
                                     src={restData?.acf?.email_image}
                                     alt={restData.acf.email} 
                                     style={{ fill: '#492C0E' }}
@@ -88,7 +88,7 @@ const Contacts = ( {restBase} ) => {
                             target="_blank" 
                             rel="noopener noreferrer">
                                 <img 
-                                    className="w-8 m-3 lg:w-10 lg:m-5 transition ease-in duration-150 transform hover:scale-125" 
+                                    className="w-8 m-3 lg:w-10 lg:m-5 transition ease-in duration-300 transform hover:scale-125" 
                                     src={restData?.acf?.linkedin_image} 
                                     alt={restData.acf.linkedin}
                                 />
@@ -97,7 +97,7 @@ const Contacts = ( {restBase} ) => {
                             href={`${restData.acf.github}`} 
                             target="_blank" rel="noopener noreferrer">
                                 <img 
-                                className="w-8 m-3 lg:w-10 lg:m-5 transition ease-in duration-150 transform hover:scale-125" 
+                                className="w-8 m-3 lg:w-10 lg:m-5 transition ease-in duration-300 transform hover:scale-125" 
                                 src={restData?.acf?.github_image} 
                                 alt={restData.acf.github}
                                 />
@@ -112,21 +112,21 @@ const Contacts = ( {restBase} ) => {
                         <div className="fixed z-50 flex box5 right-[4%] bottom-[35px] md:right-[1.5rem] md:top-[5rem] md:flex-col md:items-center">
                             <a href={`mailto:${restData.acf.email}`}>
                                 <img 
-                                    className="w-6 m-1 mx-2 lg:w-7 lg:m-2 transition ease-in duration-150 transform hover:scale-125"
+                                    className="w-6 m-1 mx-2 lg:w-7 lg:m-2 transition ease-in duration-300 transform hover:scale-125"
                                     src={restData?.acf?.email_image}
                                     alt={restData.acf.email}
                                 />
                             </a>
                             <a href={`${restData.acf.linkedin}`} target="_blank" rel="noopener noreferrer">
                                 <img 
-                                    className="w-6 m-1 mx-2 lg:w-7 lg:m-2 transition ease-in duration-150 transform hover:scale-125"
+                                    className="w-6 m-1 mx-2 lg:w-7 lg:m-2 transition ease-in duration-300 transform hover:scale-125"
                                     src={restData?.acf?.linkedin_image}
                                     alt={restData.acf.linkedin}
                                 />
                             </a>
                             <a href={`${restData.acf.github}`} target="_blank" rel="noopener noreferrer">
                                 <img 
-                                    className="w-6 m-1 mx-2 lg:w-7 lg:m-2 transition ease-in duration-150 transform hover:scale-125"
+                                    className="w-6 m-1 mx-2 lg:w-7 lg:m-2 transition ease-in duration-300 transform hover:scale-125"
                                     src={restData?.acf?.github_image}
                                     alt={restData.acf.github}
                                 />
