@@ -31,9 +31,9 @@ const Home = ( {restBase, featuredImage} ) => {
         const docHeight = document.documentElement.scrollHeight;
 
         // Set your desired thresholds and colors
-        const percentageThresholds = [0.2, 0.4, 0.6, 0.8];
+        const percentageThresholds = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7];
         const thresholds = percentageThresholds.map(percentage => Math.floor(percentage * docHeight));
-        const colors = ['#F6F4F7', '#f4f1c1', '#cdddc1', '#F6F4F7'];
+        const colors = ['#F6F4F7', '#fbf2f7', '#faede3', '#f7f5d2', '#e1ebda', '#f3fafe', '#F6F4F7'];
 
         // Find the appropriate color based on the scroll position
         let colorIndex = 0;
