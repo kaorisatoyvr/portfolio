@@ -51,7 +51,7 @@ const Work = ( { restBase, featuredImage } ) => {
     
     return (
         <>
-        <div className="mt-[70px] pt-1 mx-auto  md:px-10 md:max-w-screen-lg m-auto h-full">
+        <div className="mt-[70px] pt-1 px-5 mx-auto md:max-w-screen-lg m-auto h-full">
         { isLoaded ?
             <>
             <article className="mt-5" id={`kaori-work-${restData.id}`}>
@@ -186,11 +186,11 @@ const Work = ( { restBase, featuredImage } ) => {
                                     {restData?.acf?.code ? (  // Check if there is data
                                     <div className="sm:w-3/4 font-sm my-0 mx-auto">
                                         {/* https://blog.logrocket.com/guide-syntax-highlighting-react/ */}
-                                    <SyntaxHighlighter 
-                                        language="javascript" 
-                                        style={atomDark}>
-                                        {restData?.acf?.code}
-                                    </SyntaxHighlighter>
+                                        <SyntaxHighlighter 
+                                            language="javascript" 
+                                            style={atomDark}>
+                                            {restData?.acf?.code}
+                                        </SyntaxHighlighter>
                                     </div>
                                     ) : null}
                                 </div>

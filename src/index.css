@@ -405,6 +405,23 @@ _:-ms-lang(x), .js-scroll a::before{
   }
   
   /* Brush scroll animation */
+@media only screen and (min-width: 648px) {
+	.brush__container {
+		width: 320px;
+		overflow: hidden;
+	}
+}
+
+.brush_1,
+.brush_2,
+.brush_3,
+.brush_4,
+.brush_5,
+.brush_6,
+.brush_7 {
+	overflow: hidden;
+}
+
 .brush_1.is-animated {
 	animation: fall 15s linear forwards infinite, sway2 4s ease-in-out alternate infinite;
 	animation-delay: 0.5s;
@@ -434,14 +451,27 @@ _:-ms-lang(x), .js-scroll a::before{
 	animation-delay: 3.5s;
 }
 
-.brush1 {
+.brush1,
+.brush2,
+.brush3,
+.brush4,
+.brush5,
+.brush6,
+.brush7 {
 	position: absolute;
+	z-index: 0;
+	opacity: 0;
+	margin: 0 auto;
+	overflow: hidden;
+	width: full;
+	height: full;
+}
+
+
+.brush1 {
 	left: 10%;
 	transform: translate(-50%, 0);
 	width: 50px;
-	margin: 0 auto;
-	z-index: 0;
-	opacity: 0;
 }
 @media only screen and (min-width: 1024px) {
 	.brush1 {
@@ -454,13 +484,14 @@ _:-ms-lang(x), .js-scroll a::before{
 }
 
 .brush2 {
-	position: absolute;
 	left: 80%;
 	transform: translate(-90%, 0);
-	width: 100px;
-	margin: 0 auto;
-	z-index: 0;
-	opacity: 0;
+	width: 50px;
+}
+@media only screen and (min-width: 1024px) {
+	.brush2 {
+		width: 100px;
+	}
 }
 .brush2.is-animated {
 	animation: fall 9s linear forwards infinite, sway1 7s ease-in-out alternate infinite;
@@ -468,13 +499,14 @@ _:-ms-lang(x), .js-scroll a::before{
 }
 
 .brush3 {
-	position: absolute;
 	left: 50%;
 	transform: translate(-30%, 0);
-	width: 200px;
-	margin: 0 auto;
-	z-index: 0;
-	opacity: 0;
+	width: 80px;
+}
+@media only screen and (min-width: 768px) {
+	.brush3 {
+		width: 200px;
+	}
 }
 .brush3.is-animated {
 	animation: fall 10s linear forwards infinite, sway2 6s ease-in-out alternate infinite;
@@ -482,13 +514,14 @@ _:-ms-lang(x), .js-scroll a::before{
 }
 
 .brush4 {
-	position: absolute;
 	left: 20%;
 	transform: translate(-70%, 0);
-	width: 150px;
-	margin: 0 auto;
-	z-index: 0;
-	opacity: 0;
+	width: 60px;
+}
+@media only screen and (min-width: 768px) {
+	.brush4 {
+		width: 150px;
+	}
 }
 .brush4.is-animated {
 	animation: fall 8s linear forwards infinite, sway1 6s ease-in-out alternate infinite;
@@ -496,13 +529,14 @@ _:-ms-lang(x), .js-scroll a::before{
 }
 
 .brush5 {
-	position: absolute;
 	left: 70%;
 	transform: translate(-30%, 0);
-	width: 150px;
-	margin: 0 auto;
-	z-index: 0;
-	opacity: 0;
+	width: 80px;
+}
+@media only screen and (min-width: 768px) {
+	.brush5 {
+		width: 150px;
+	}
 }
 .brush5.is-animated {
 	animation: fall 7s linear forwards infinite, sway1 5s ease-in-out alternate infinite;
@@ -510,13 +544,14 @@ _:-ms-lang(x), .js-scroll a::before{
 }
 
 .brush6 {
-	position: absolute;
 	left: 30%;
 	transform: translate(-50%, 0);
-	width: 100px;
-	margin: 0 auto;
-	z-index: 0;
-	opacity: 0;
+	width: 50px;
+}
+@media only screen and (min-width: 768px) {
+	.brush6 {
+		width: 100px;
+	}
 }
 .brush6.is-animated {
 	animation: fall 9s linear forwards infinite, sway1 6s ease-in-out alternate infinite;
@@ -524,13 +559,9 @@ _:-ms-lang(x), .js-scroll a::before{
 }
 
 .brush7 {
-	position: absolute;
 	left: 60%;
 	transform: translate(-70%, 0);
 	width: 70px;
-	margin: 0 auto;
-	z-index: 0;
-	opacity: 0;
 }
 @media only screen and (min-width: 1024px) {
 	.brush7 {
@@ -561,10 +592,10 @@ _:-ms-lang(x), .js-scroll a::before{
 	  transform: translate3d(0px, 0px, 0px) rotate(0deg);
 	}
 	25% {
-	  transform: translate3d(-90px, 0px, 0px) rotate(-10deg);
+	  transform: translate3d(-30px, 0px, 0px) rotate(-10deg);
 	}
 	75% {
-	  transform: translate3d(90px, 0px, 0px) rotate(10deg);
+	  transform: translate3d(30px, 0px, 0px) rotate(10deg);
 	}
 	to {
 	  transform: translate3d(0px, 0px, 0px) rotate(0deg);
@@ -576,10 +607,10 @@ _:-ms-lang(x), .js-scroll a::before{
 	  transform: translate3d(0px, 0px, 0px) rotate(0deg);
 	}
 	25% {
-	  transform: translate3d(-90px, 0px, 0px) rotate(-30deg);
+	  transform: translate3d(-40px, 0px, 0px) rotate(-30deg);
 	}
 	75% {
-	  transform: translate3d(90px, 0px, 0px) rotate(30deg);
+	  transform: translate3d(40px, 0px, 0px) rotate(30deg);
 	}
 	to {
 	  transform: translate3d(0px, 0px, 0px) rotate(0deg);

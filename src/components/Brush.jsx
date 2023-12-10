@@ -31,7 +31,7 @@ const Brush = () => {
       
     return (
         <>
-
+      <div className="brush__container">
         {/* brush pink small cursor following */} 
         <motion.img
           ref={ref}
@@ -207,6 +207,7 @@ const Brush = () => {
           />
         </figure>
 
+      </div>
         </>
     )
 
