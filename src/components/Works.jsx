@@ -27,7 +27,7 @@ const Works = ( { restBase, featuredImage } ) => {
     
     return (
         <>
-    <div className="mt-[70px] pt-1 px-5 mx-auto md:max-w-screen-lg m-auto h-full">
+    <div className="pt-1 px-5 mx-auto md:max-w-screen-lg m-auto h-full">
         { isLoaded ?
             <>
             <article id={`post-${restData.id}`}>

@@ -25,7 +25,7 @@ const About = ({ restBase }) => {
     }, [restPath])
 
     return (
-        <div className="mt-[70px] pt-1 px-5 my-0 mx-auto max-w-5xl md:px-10 md:max-w-screen-lg h-full">
+        <div className="relative pt-1 px-5 my-0 mx-auto max-w-5xl md:px-10 md:max-w-screen-lg h-full">
             {isLoaded ?
                 <>
                 <section>
@@ -34,9 +34,9 @@ const About = ({ restBase }) => {
                             className="font-brightwall">
                                 {restData.title.rendered}
                         </h1>
-                        <div className="sm:relative sm:text-lg">
+                        <div className="sm:text-lg">
                             <div className="sm:w-1/4">
-                                <div className="w-24 md:w-28 lg:w-36 z-10 absolute top-[6rem] right-1/4 md:right-[3rem] sm:top-0 sm:right-[2rem]">
+                                <div className="w-24 md:w-28 lg:w-36 z-10 absolute top-5 right-1/4 sm:top-28 sm:right-10 md:right-20">
                                     <figure>
                                         <motion.img
                                             initial={{ opacity: 0 }}
@@ -46,7 +46,7 @@ const About = ({ restBase }) => {
                                             alt={restData?.acf?.picture_of_kaori} />
                                     </figure>
                                 </div>
-                                <div className="opacity-60 z-0 absolute w-28 md:w-32 lg:w-40 top-[5.8rem] sm:top-[-2px] right-[23%] sm:right-[1.5rem] md:right-[2.5rem]">
+                                <div className="opacity-60 z-0 absolute top-5 w-28 md:w-32 lg:w-40 top-5 sm:top-28 right-[23%] sm:right-8 md:right-16">
                                     <figure>
                                         <img
                                             src={restData?.acf?.illustration_of_me}
